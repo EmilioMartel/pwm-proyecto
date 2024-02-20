@@ -3,6 +3,14 @@ body{
     min-height: 100vh;
 }
 
+body{
+    background-color: #e5e5f7;
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    display: flex;
+    min-height: 100vh;
+}
+
 .form{
     background-color: #fff;
     margin: auto;
@@ -10,6 +18,7 @@ body{
     max-width: 400px;
     padding: 4.5em 3em;
     text-align: center;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
 }
 
 .form_container{
@@ -34,7 +43,7 @@ body{
     border-bottom: 1px solid var(--color);
 }
 
--form__input:focus + .form_label,
+.form_input:focus + .form_label,
 .form_input:not(:placeholder-shown) + .form_label{
     transform: translateY(-12px) scale(.7);
     transform-origin: left top;
@@ -49,15 +58,13 @@ body{
     left: 5px;
     transform: translateY(10px);
     transition: transform .5s, color .3s;
-
 }
 
 .form_submit{
-    background: #3866f2;
+    background:  #3866f2;
     color: #fff;
     font-weight: 300;
     font-size: 1rem;
     padding: .8em 0;
     border: none;
-    border-radius: .5em;
 }
