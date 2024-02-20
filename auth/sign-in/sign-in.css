@@ -1,20 +1,3 @@
-#noSesionHeader{
-    background-color: grey;
-}
+body{
 
-#logo {
-    width: 3rem;
-}
-
-.inline {
-    display: inline;
-    max-width: 33%;
-}
-
-.right {
-    float: right;
-}
-
-.block {
-    display: block;
 }
