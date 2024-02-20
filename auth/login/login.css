@@ -1,14 +1,17 @@
-
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
-    background-color: lightskyblue;
-    padding: 20px;
-    color: white;
-    text-align: center;
+    background-color: #ede7e3;
+    padding: 10px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #logo {
@@ -17,20 +20,28 @@ header {
     margin-right: 10px;
 }
 
+.logo-text {
+    margin-left: 10px;
+    color: #0077b6;
+    font-weight: bold;
+}
+
 nav {
-    display: inline-block;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a {
-    color: white;
+    color: black;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .idiomas {
-    display: inline-block;
-    position: relative;
-    margin-right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .idiomas:hover ul {
@@ -40,7 +51,7 @@ nav a {
 .idiomas ul {
     display: none;
     position: absolute;
-    background-color: #333;
+    background-color: #ede7e3;
     padding: 10px;
     list-style: none;
     margin: 0;
@@ -50,8 +61,14 @@ nav a {
     margin-bottom: 5px;
 }
 
+#idiomas {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
 .boton {
-    background-color: black;
+    background-color: #0077b6;
     color: white;
     padding: 8px 15px;
     border: none;
@@ -60,5 +77,77 @@ nav a {
 }
 
 .boton:hover {
-    background-color: #444;
+    background-color: #f4a261;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section {
+    text-align: left;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-section h1 {
+    font-size: 24px;
+}
+
+.login-section img {
+    width: 150px;
+    margin: 20px auto 20px;
+    display: block;
+}
+.login-section h1 {
+    text-align: center;
+}
+.login-section p,
+.login-section label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.login-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.login-section a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-section button {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-section button:hover {
+    background-color: #f4a261;
+}
+
+footer {
+    display: flex;
+    background-color: #ede7e3;
+    color: black;
+    text-align: left;
+    padding: 20px;
 }
