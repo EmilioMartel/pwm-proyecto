@@ -16,19 +16,23 @@
 
     <form class="form">
         <div class="form_container">
-            <div class="form_group">
-                <input type="text" id="name" class="form_input" placeholder=" ">
-                <label for="name" class="form_label">Nombre:</label>
-                <span class="form_line"></span>
+
+            <div class="form_line_group">
+                <div class="form_group">
+                    <input type="text" id="name" class="form_line_input" placeholder=" ">
+                    <label for="name" class="form_label">Nombre:</label>
+                    <span class="form_line"></span>
+                </div>
+                <div class="form_group">
+                    <input type="text" id="surname" class="form_line_input" placeholder=" ">
+                    <label for="surname" class="form_label">Apellidos:</label>
+                    <span class="form_line"></span>
+                </div>
             </div>
-            <div class="form_group">
-                <input type="text" id="surname" class="form_input" placeholder=" ">
-                <label for="surname" class="form_label">Apellidos:</label>
-                <span class="form_line"></span>
-            </div>
+
             <div class="form_group">
                 <input type="text" id="mail" class="form_input" placeholder=" ">
-                <label mail="name" class="form_label">Correo:</label>
+                <label for="mail" class="form_label">Correo:</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
@@ -42,8 +46,11 @@
                 <span class="form_line"></span>
             </div>
 
-            <input id="TermYCond" type="checkbox" name="TermYCond">
-            <label for="TermYCond">Terminos y condiciones:</label>
+            <div class="form_line_join_group">
+                <input id="TermYCond" type="checkbox" name="TermYCond">
+                <label for="TermYCond"><a href="https://example.com">Terminos y condiciones</a></label>
+            </div>
+
             <input type="submit" class="form_submit" value="Sign up">
         </div>
     </form>
