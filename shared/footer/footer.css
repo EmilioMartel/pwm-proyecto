@@ -1,4 +1,6 @@
+
 footer {
+    margin: 0;
     display: flex;
     background-color: #ede7e3;
     color: black;
