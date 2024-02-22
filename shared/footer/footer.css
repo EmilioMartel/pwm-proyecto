@@ -1,9 +1,11 @@
-
-footer {
+body{
     margin: 0;
+}
+footer {
+    padding: 20px;
     display: flex;
     background-color: #ede7e3;
     color: black;
     text-align: left;
-    padding: 20px;
+    margin-top: 27px;
 }
