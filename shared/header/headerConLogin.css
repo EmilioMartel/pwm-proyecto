@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
 }
 
@@ -9,6 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -37,43 +38,26 @@ nav a {
     margin: 0 20px;
 }
 
-.idiomas {
+.user-info {
     display: flex;
     align-items: center;
 }
 
-.idiomas:hover ul {
-    display: block;
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-.idiomas ul {
-    display: none;
-    position: absolute;
-    background-color: #ede7e3;
-    padding: 10px;
-    list-style: none;
-    margin: 0;
+.user-name {
+    font-weight: bold;
+    margin-right: 20px;
+
 }
 
-.idiomas ul li {
-    margin-bottom: 5px;
+.user-link {
+    text-decoration: none;
+    color: black;
 }
 
-#idiomas {
-    width: 20px;
-    height: 20px;
-    margin: 10px;
-}
-
-.boton {
-    background-color: #0077b6;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.boton:hover {
-    background-color: #f4a261;
-}
