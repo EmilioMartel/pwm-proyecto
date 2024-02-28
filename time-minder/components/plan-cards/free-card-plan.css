@@ -1,5 +1,7 @@
 .contenedor{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .titulo{
@@ -7,21 +9,30 @@
 }
 
 .contenido{
-
+    background-color: rgb(207, 203, 203);
+    padding: 5px;
 }
 
 .contenedor_precio{
-
+    background-color: red;
+    margin: 5px;
+    min-height: 50px;
 }
 
 .precio{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.caracteriticas{
-
+.caracteristicas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.caracteritica{
-
+.caracteristica{
+    margin: 10px;
+    padding: 10px;
+    background-color: darkgrey;
 }
