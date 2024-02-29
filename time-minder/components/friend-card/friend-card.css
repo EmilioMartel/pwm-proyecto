@@ -1,0 +1,29 @@
+.friend-request-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    column-gap: 5%;
+    padding: 2%;
+
+    width: 125px;
+    height: 20px;
+
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+
+    background-color: lightgray;
+}
+
+.picture-profile{
+    height: 50px;
+    width: 50px;
+
+    border-radius: 100%;
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+
+    background-color: grey;
+}
