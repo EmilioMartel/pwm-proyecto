@@ -1,3 +1,10 @@
+.container-friend-request{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2%;
+    font-size: small;
+}
+
 .friend-request-card{
     display: flex;
     flex-direction: row;
@@ -6,24 +13,23 @@
     column-gap: 5%;
     padding: 2%;
 
-    width: 125px;
-    height: 20px;
+    max-width: 125px;
+    max-height: 20px;
 
     border-color: black;
     border-width: thin;
     border-style: solid;
 
     background-color: lightgray;
+
+    box-shadow: 5px 5px 10px lightgray;
+}   
+
+.delete-image{
+    max-width: 5%;
+    max-height: 5%;
 }
 
-.picture-profile{
-    height: 50px;
-    width: 50px;
-
-    border-radius: 100%;
-    border-color: black;
-    border-width: thin;
-    border-style: solid;
-
-    background-color: grey;
+.profile-image{
+    max-width: 30%;
 }
