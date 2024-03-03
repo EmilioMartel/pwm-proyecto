@@ -50,10 +50,10 @@ h1 {
 
 .caracteristicas {
     display: flex;
-    flex-direction: column; /* Apilado verticalmente */
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 20px;
 }
 
@@ -65,8 +65,9 @@ h1 {
 
 .tarjetas {
     display: flex;
-    justify-content: space-between; 
-    width: 100%; 
+    justify-content: space-around; 
+    width: 100%;
+    margin-bottom: 70px;
 }
 
 .caracteristica1,
@@ -77,11 +78,9 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: justify;
+    flex: 1;
+    max-width: 200px; 
+    margin: 10px; 
 }
 
 .caracteristica1 img,
@@ -91,6 +90,79 @@ h1 {
     max-width: 80px;
     border: 2px solid #f4a261;
     height: auto;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
+
+.video-tutorial {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuadro-texto {
+    flex: 1;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-image: linear-gradient(to top, #ede7e3 0%, #0077b6 100%);
+    text-align: justify;
+}
+
+.cuadro-texto h2 {
+    color: white;
+}
+
+.video {
+    flex: 1;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: none; 
+    border-radius: 10px; 
+}
+
+.preguntas-respuestas {
+    text-align: center;
+    margin: 20px;
+}
+
+#FAQ {
+    width: 80px; 
+    height: 80px;
+}
+
+.preguntas-respuestas h2 {
+    color: #0077b6;
+}
+
+.preguntas-respuestas p {
+    font-size: 20px;
+    margin-top: 20px; 
+}
+
+.pregunta {
+    margin-top: 20px; 
+    border: 1px solid #ddd; 
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.pregunta h3 {
+    color: #0077b6;
+}
+
+.pregunta p {
+    margin-top: 10px;
+}
+
+.pregunta ol {
+    margin-top: 10px;
+}
+
+.pregunta ol li {
+    margin-top: 5px;
+}
+
 
