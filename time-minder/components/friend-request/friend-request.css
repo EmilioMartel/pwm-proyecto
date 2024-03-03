@@ -1,0 +1,46 @@
+.card{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    max-height: 35px;
+    margin: 1px;
+
+    border-radius: 5px;
+    
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    font-family: 'Arial', sans-serif;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(47, 224, 224);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name{
+    margin: 5px;
+    font-weight: bold;
+}
+
+.request-button{
+    max-height: 35px;
+    background: #3866f2; /* This should be the color you want for your button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.request-button:hover {
+    background: #2a4db2; /* Replace with a darker gradient or color */
+}
