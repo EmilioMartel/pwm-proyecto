@@ -2,10 +2,10 @@ body{
     margin: 0;
 }
 footer {
-    padding: 20px;
-    display: flex;
+    
+    padding: 20px 0px;
+    width: 100%;
     background-color: #ede7e3;
     color: black;
-    text-align: left;
-    margin-top: 27px;
+    text-align: center;
 }
