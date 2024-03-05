@@ -192,7 +192,7 @@ const showModal = () => {
     modalContainer.style.justifyContent = 'center';
 
     modalContent.style.width = '40%';
-    modalContent.style.height = '40%';
+    modalContent.style.height = '70%';
     modalContent.style.backgroundColor = 'gray';
     modalContent.style.borderRadius = '10px';
     modalContent.style.padding = '20px';
@@ -364,7 +364,7 @@ function eventModal(eventosDelDia) {
 
     // Configurar estilos para modalContent
     modalContent.style.width = '40%';
-    modalContent.style.height = '40%';
+    modalContent.style.height = '70%';
     modalContent.style.backgroundColor = 'gray';
     modalContent.style.borderRadius = '10px';
     modalContent.style.padding = '20px';

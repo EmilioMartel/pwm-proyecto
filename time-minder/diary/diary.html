@@ -9,38 +9,33 @@
     <link rel="stylesheet" href="diary.css">
 </head>
 <body>
+    <header id="divCalendario" class="d-flex">
+        <nav class="calendar">
+            <section class="calendar__info">
+                <button class="calendar__prev" id="prev-month">&#9664;</button>
+                <div class="calendar__month" id="month"></div>
+                <div class="calendar__year" id="year"></div>
+                <button class="calendar__next" id="next-month">&#9654;</button>
+            </section>
+            <section class="calendar__week">
+                <div class="calendar__day c-white">Lun</div>
+                <div class="calendar__day c-white">Mar</div>
+                <div class="calendar__day c-white">Mier</div>
+                <div class="calendar__day c-white">Jue</div>
+                <div class="calendar__day c-white">Vie</div>
+                <div class="calendar__day c-white">Sáb</div>
+                <div class="calendar__day c-white">Dom</div>
+            </section>
+        </nav>
+    </header> 
     <main id="divMainContent">
-    
-        <header id="divCalendario" class="d-flex">
-            <nav class="calendar">
-                <section class="calendar__info">
-                    <button class="calendar__prev" id="prev-month">&#9664;</button>
-                    <div class="calendar__month" id="month"></div>
-                    <div class="calendar__year" id="year"></div>
-                    <button class="calendar__next" id="next-month">&#9654;</button>
-                </section>
-            
-                <section class="calendar__week">
-                    <div class="calendar__day c-white">Lun</div>
-                    <div class="calendar__day c-white">Mar</div>
-                    <div class="calendar__day c-white">Mier</div>
-                    <div class="calendar__day c-white">Jue</div>
-                    <div class="calendar__day c-white">Vie</div>
-                    <div class="calendar__day c-white">Sáb</div>
-                    <div class="calendar__day c-white">Dom</div>
-                </section>
-            
-                <section id="dates" class="calendar__dates"></section>
-
-            </nav>
-        </header>     
-        
-        <footer id="divFooter">
-            <button id="showModal" class="customBtn mb-3">Crear Evento</button>
-            <button class="customBtn mb-3">Crear Grupo</button>
-            <button class="customBtn mb-3">Gestionar Grupos</button>
-        </footer> 
+        <section id="dates" class="calendar__dates"></section>
     </main>
+    <footer id="divFooter">
+        <button id="showModal" class="customBtn mb-3">Crear Evento</button>
+        <button class="customBtn mb-3">Crear Grupo</button>
+        <button class="customBtn mb-3">Gestionar Grupos</button>
+    </footer> 
     
     <script src="./diary.js"></script>
 </body>
