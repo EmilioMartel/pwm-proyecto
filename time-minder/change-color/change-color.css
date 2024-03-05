@@ -4,6 +4,14 @@ body {
     height: 100%;
 }
 
+section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
 main {
     display: flex;
     width: 100%;
@@ -49,8 +57,6 @@ main {
 {
     display: flex;
     flex-direction: row;
-    text-align: center;
-    align-items: center;
     margin: 20px;
 }
 
@@ -124,7 +130,9 @@ h2 {
 .select-palette-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: auto;
 }
 
@@ -136,6 +144,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     margin-left: center;
+    margin-bottom: 20px;
 }
 
 .select-palette-container button:hover {
@@ -147,13 +156,5 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 70%;
-}
-
-#paletas-image {
-    width: 300px;
-    height: 300px;
-    margin-left: auto; 
-    margin-right: 600px; 
-    margin-top: -200px;
+    width: 100%;
 }
