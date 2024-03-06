@@ -1,7 +1,6 @@
 body {
     height: 100%;
     width: 100%;
-    display: flex;
     margin: 0;
 }
 
@@ -11,20 +10,23 @@ form {
     width: min-content;
 }
 
-
 aside {
     width: 30%;
-    height: 100vh;
+    min-width: 300px; /* Añade un ancho mínimo para evitar que el aside sea demasiado estrecho */
+    height: 95vh;
     background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-main {
-    width: 70%;
-    background-color: blueviolet;
 
+main {
+    width: 100%;
+    background-color: blueviolet;
+    display: flex;
+}
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,21 +35,29 @@ main {
 
 #contenido {
     height: 70vh;
-    min-width: 60vw;
+    width: 100%;
     background-color: red;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Agrega esta línea para permitir el "wrap" de los elementos */
+    flex-wrap: wrap;
 }
-
 
 .files {
     margin: 10px;
     height: 80px;
     width: 80px;
     background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.btn-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .btn-custom {
     width: 200px;
     height: 50px;
@@ -59,4 +69,10 @@ main {
 
 .btn-custom:hover {
     cursor: pointer;
+}
+
+footer {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
 }
