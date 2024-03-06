@@ -498,7 +498,12 @@ li {
     color: white;
 }
 
+
 .closeBtn:hover{
     background-color: red;
     color: white;
+}
+
+input {
+    width: 200px;
 }

@@ -171,138 +171,60 @@ createEventButton.addEventListener("click", () => showModal());
 const showModal = () => {
     const body = document.body;
 
-    // Crea el contenedor del modal
-    const modalContainer = document.createElement('div');
-    modalContainer.id = 'miModal';
-    modalContainer.className = 'modal';
+    const cerrarModal = () => {
+        alert("cerrar")
+        const modalContainer = document.getElementById('modalForm');
+        if (modalContainer) {
+            modalContainer.style.display = 'none';
+        }
+    };
 
-    // Crea el contenido del modal
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-contenido';
-
-    // Crea el encabezado h1
-    const titulo = document.createElement('h1');
-    titulo.textContent = 'Crear evento';
-
-
-    // Configura el estilo del modal
-    modalContainer.style.display = 'flex';
-    modalContainer.style.flexDirection = 'column';
-    modalContainer.style.alignItems = 'center';
-    modalContainer.style.justifyContent = 'center';
-
-    modalContent.style.width = '40%';
-    modalContent.style.height = '70%';
-    modalContent.style.backgroundColor = 'gray';
-    modalContent.style.borderRadius = '10px';
-    modalContent.style.padding = '20px';
-    modalContent.style.color = '#fff';
-
-    // Crea el formulario
-    const formulario = document.createElement('form');
-    formulario.id = 'eventoForm';
-
-    // Campos del formulario
-    const nombreInput = crearInput('Nombre');
-    const diaInput = crearInput('Día', false, true);
-    const horaInicioInput = crearInput('Hora de inicio', true);
-    const horaFinInput = crearInput('Hora de finalización', true);
-    const ubicacionInput = crearInput('Ubicación');
-
-    // Desplegable Prioridad
-    const prioridadSelect = crearSelect('Prioridad', ['Alta', 'Media', 'Baja']);
-
-    // Desplegable Categoría
-    const categoriaSelect = crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio']);
-
-    // Campo de notas
-    const notasTextArea = document.createElement('textarea');
-    notasTextArea.name = 'notas';
-    notasTextArea.placeholder = 'Notas...';
-    notasTextArea.rows = 4;
-
-    // Crea un contenedor para los botones y aplica el estilo flex
-    const botonesContainer = document.createElement('div');
-    botonesContainer.style.display = 'flex';
-
-    // Botones del formulario
-    const cerrarModalBtn = crearBoton('Cerrar', function () {
-        modalContainer.style.display = 'none';
-    }, 'closeBtn'); // Pasar 'rojo' como clase extra para el botón rojo
-
-    const aceptarModalBtn = crearBoton('Crear Evento', function () {
-        // Lógica para aceptar el formulario, puedes personalizarla según tus necesidades
+    const aceptarModal = () => {
         alert('Formulario aceptado');
-    });
+    };
 
-    // Añade los botones al contenedor
-    botonesContainer.appendChild(cerrarModalBtn);
-    botonesContainer.appendChild(aceptarModalBtn);
+    // Crea el HTML del modalContainer
+    const modalContainerHTML = `
+        <div id="modalForm" class="modal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="modal-contenido" style="width: 50%; height: 45%; background-color: gray; border-radius: 10px; padding: 20px; color: #fff;">
+                <h1>Crear evento</h1>
+                <form id="eventoForm" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                    ${crearInput('Nombre')}
+                    ${crearInput('Día', false, true)}
+                    ${crearInput('Hora de inicio', true)}
+                    ${crearInput('Hora de finalización', true)}
+                    ${crearInput('Ubicación')}
+                    ${crearSelect('Prioridad', ['Alta', 'Media', 'Baja'])}
+                    ${crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio'])}
+                    <textarea name="notas" placeholder="Notas..." rows="4"></textarea>
+                    <div style="display: flex;">
+                        ${crearBoton('Cerrar', cerrarModal, 'closeBtn')}
+                        ${crearBoton('Crear Evento', aceptarModal)}
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
 
-    // Añade el contenedor de botones al formulario
-    
-    // Agrega elementos al formulario
-    formulario.appendChild(titulo);
-    formulario.appendChild(nombreInput);
-    formulario.appendChild(diaInput);
-    formulario.appendChild(horaInicioInput);
-    formulario.appendChild(horaFinInput);
-    formulario.appendChild(ubicacionInput);
-    formulario.appendChild(prioridadSelect);
-    formulario.appendChild(categoriaSelect);
-    formulario.appendChild(notasTextArea);
-    formulario.appendChild(botonesContainer);
-
-    // Añade estilos al formulario
-    formulario.style.display = 'flex';
-    formulario.style.flexDirection = 'column';
-    formulario.style.alignItems = 'center';
-    formulario.style.justifyContent = 'center';
-    formulario.style.height = '100%'
-
-    // Añade el formulario al contenido del modal
-    modalContent.appendChild(formulario);
-
-    // Añade elementos al DOM
-    modalContainer.appendChild(modalContent);
-    body.appendChild(modalContainer);
+    // Agrega el modal al cuerpo del documento usando innerHTML
+    body.innerHTML += modalContainerHTML;
 };
+
+
 
 // Función para crear un input con un estilo básico y validación de formato HH:MM
 function crearInput(labelText, esHora = false, esFecha = false) {
-    const div = document.createElement('div');
-
-    const label = document.createElement('label');
-    label.textContent = labelText;
-
-    const input = document.createElement('input');
     
-    if (esHora) {
-        input.type = 'time';
-        // Aplica la validación de formato HH:MM solo si es un campo de hora
-        input.addEventListener('input', function () {
-            if (!validarFormatoHora(input.value)) {
-                input.setCustomValidity('El formato debe ser HH:MM');
-            } else {
-                input.setCustomValidity('');
-            }
-        });
-    } else if (esFecha) {
-        input.type = 'date';
-    } else {
-        input.type = 'text';
-    }
+    const inputType = esHora ? 'time' : (esFecha ? 'date' : 'text');
 
-    input.required = true; // Campo obligatorio
+    const inputHTML = `
+        <div>
+            <label style="display: block; margin-bottom: 5px;">${labelText}</label>
+            <input type="${inputType}" ${esHora ? 'oninput="validarFormatoHora(this.value)"' : ''}>
+        </div>
+    `;
 
-    // Estilos para colocar el label encima del input y añadir espacio vertical
-    label.style.display = 'block';
-    label.style.marginBottom = '5px'; // Ajusta según tus preferencias
-
-    div.appendChild(label);
-    div.appendChild(input);
-
-    return div;
+    return inputHTML;
 }
 
 // Función para validar el formato HH:MM
@@ -313,26 +235,18 @@ function validarFormatoHora(hora) {
 
 // Función para crear un select con opciones y un estilo básico
 function crearSelect(labelText, opciones) {
-    const div = document.createElement('div');
+    const selectHTML = `
+        <div>
+            <label style="display: block; margin-bottom: 5px;">${labelText}</label>
+            <select>
+                ${opciones.map(opcion => `<option value="${opcion}">${opcion}</option>`).join('')}
+            </select>
+        </div>
+    `;
 
-    const label = document.createElement('label');
-    label.textContent = labelText;
-
-    const select = document.createElement('select');
-    opciones.forEach(opcion => {
-        const option = document.createElement('option');
-        option.value = opcion;
-        option.text = opcion;
-        select.appendChild(option);
-    });
-
-    div.appendChild(label);
-    div.appendChild(select);
-
-    return div;
+    return selectHTML;
 }
 
-// Función para crear un botón con un estilo básico
 function crearBoton(texto, onClickCallback, claseExtra = '') {
     const boton = document.createElement('button');
     boton.className = `customBtn ${claseExtra}`;
@@ -341,8 +255,13 @@ function crearBoton(texto, onClickCallback, claseExtra = '') {
     // Agrega el evento clic al botón
     boton.addEventListener('click', onClickCallback);
 
-    return boton;
+    // Debugging
+    console.log(`Botón "${texto}" creado con evento clic.`);
+
+    return boton.outerHTML;
 }
+
+
 
 function eventModal(eventosDelDia) {
     const body = document.body;
@@ -351,7 +270,7 @@ function eventModal(eventosDelDia) {
     const modalContainer = document.createElement('div');
     modalContainer.id = 'miModal';
     modalContainer.className = 'modal';
-    
+
     // Configura el estilo del modalContainer
     modalContainer.style.display = 'flex';
     modalContainer.style.flexDirection = 'column';
@@ -383,10 +302,13 @@ function eventModal(eventosDelDia) {
     // Agregar la lista de eventos al contenido del modal
     modalContent.appendChild(listaEventos);
 
-    
-    const cerrarModalBtn = crearBoton('Cerrar', function () {
+    // Crear el botón "Cerrar" y agregar un manejador de eventos
+    const cerrarModalBtn = document.createElement('button');
+    cerrarModalBtn.textContent = 'Cerrar';
+    cerrarModalBtn.className = 'closeBtn';
+    cerrarModalBtn.addEventListener('click', function () {
         modalContainer.style.display = 'none';
-    }, 'closeBtn');
+    });
 
     // Agregar el botón "Cerrar" al contenido del modal
     modalContent.appendChild(cerrarModalBtn);
@@ -396,10 +318,4 @@ function eventModal(eventosDelDia) {
 
     // Agregar el modal al cuerpo del documento
     body.appendChild(modalContainer);
-
 }
-
-
-
-
-
