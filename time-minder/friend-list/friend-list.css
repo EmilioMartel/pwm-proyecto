@@ -1,14 +1,83 @@
-.container-friend-list{
+.container-page-friends{
     display: flex;
     flex-direction: row;
     column-gap: 1%;
     margin-bottom: 20px;
 }
 
+.friends-managment{
+    display: flex;
+    justify-content: left;
+    background-color: #fff;
+    width: 80%;
+    max-width: 275px;
+    padding: 30px 40px;
+    overflow: hidden;
+}
+
+#tabs{
+    position: relative;
+}
+  
+span.diana {
+    position: fixed;
+    display: none;
+}
+  
+.diana + a {
+    display: block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    margin-bottom: -1px;
+    border-radius: 8px 8px 0 0;
+    margin-right: 10px;
+    text-decoration:none;
+}
+  
+.diana:target + a {
+    background-color: #fff;
+    border-bottom-color: #fff; 
+}
+  
+#pnl_1, #pnl_2{
+    position: absolute;
+    top: 31px;
+    left: 0;
+    border: none;
+    clear: both;
+    overflow: hidden;
+}
+  
+#pnl_1 > div, #pnl_2 > div {
+    opacity: 0;
+    transition: all 0.1s ease;
+    padding: 30px;
+}
+  
+#uno:target ~ #pnl_1, #dos:target ~ #pnl_2{
+    position: static;
+    border: 1px solid #ddd;
+}
+  
+#uno:target ~ #pnl_1 > div, #dos:target ~ #pnl_2 > div{
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.container-friends{
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+}
+
 .friend-list{
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 25%;
     column-gap: 1%; 
     margin: 1%;
     padding: 4px;
@@ -18,23 +87,8 @@
     overflow-x: auto;
 }
 
-.search-person{
-    max-width: 50%;
-}
-
-.frien-label{
-    max-width: 100%;
-    margin: 5px;
-    padding-left: 5px;
-}
-
-.result-list{
+.container-search{
     flex-grow: 1;
-    max-width: 100%;
-    max-height: 400px;
-    overflow-y: auto;
-    margin: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .search-box {
@@ -111,3 +165,12 @@
 .friend-list::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+.result-list{
+    flex-grow: 1;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

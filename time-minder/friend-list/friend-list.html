@@ -19,8 +19,31 @@
 
     </header>
 
-    <div class="container-friend-list">
-        <div class="friend-list">
+    <div class="container-page-friends">
+        <div class="friends-managment">
+            <div class="tabs">
+                <span class="diana" id="uno"></span>
+                <a href="#uno" class="tab-e">Amigos</a>
+                <span class="diana" id="dos"></span>
+                <a href="#dos" class="tab-e">Solicitudes Pendientes</a>
+
+                <div id="pnl_1">
+                    <div class="container-friends">
+                        <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
+                        
+                    </div>
+                </div>
+
+                <div id="pnl_2">
+                    <div class="container-friends">
+                        <div id="friend" xlu-include-file="../components/friend-unconfirmed-request/friend-unconfirmed-request.html"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-search">
             <div class="search-box">
                 <input type="text" class="search-input" placeholder="Buscar...">
                 <button class="search-button">
@@ -30,28 +53,20 @@
                     </svg>
                 </button>
             </div>
-            <label class="frien-label">Amigos:</label>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-unconfirmed-request/friend-unconfirmed-request.html"></div>
-        </div>
-        <div class="result-list">
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-            <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+            <div class="result-list">
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+            </div>
         </div>
     </div>
 
