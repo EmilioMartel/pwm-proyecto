@@ -93,3 +93,21 @@
 .result-list::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+.friend-list::-webkit-scrollbar{
+    width: 8px;
+}
+
+.friend-list::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 6px;
+}
+  
+.friend-list::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 6px; 
+}
+  
+.friend-list::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
