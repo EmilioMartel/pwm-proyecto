@@ -19,15 +19,17 @@
     <div class="sidebar">
         <h2>Panel de Control</h2>
         <ul>
-            <li><a href="#">Editar Información</a></li>
-            <li><a href="#">Cambiar Color</a></li>
+            <li><a href="profile.html">Editar Información</a></li>
+            <li><a href="../change-color/change-color.html">Cambiar Color</a></li>
             <li><a href="#">Cerrar Sesión</a></li>
         </ul>
     </div>
 
     <div class="main-content">
         <h2>Perfil</h2>
-        <img src="../../assets/images/imagen-usuario.png" alt="Imagen de perfil" class="profile-image">
+        <div class="profile-info">
+            <img src="../../assets/images/imagen-usuario.png" alt="Imagen de perfil" class="profile-image">
+        </div>
 
         <button class="change-image-btn">Cambiar Imagen de Perfil</button>
 
@@ -38,11 +40,7 @@
             <label for="lastName">Apellidos:</label>
             <input type="text" id="lastName" name="lastName" value="Apellidos">
 
-            <label for="plan">Cambiar Plan:</label>
-            <select id="plan" name="plan">
-                <option value="plan1">Plan 1</option>
-                <option value="plan2">Plan 2</option>
-            </select>
+            <button href='../components/plan-card/plan-card.html' type="buttonPlan">Cambiar Plan</button>
 
             <label for="email">Modificar Email:</label>
             <input type="email" id="email" name="email" value="correo@ejemplo.com">
