@@ -71,3 +71,19 @@ main {
     background-color: #f4a261;
 }
 
+.a {
+    background-color: #0077b6;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+.a:hover {
+    background-color: #f4a261;
+}
+
+

@@ -2,13 +2,14 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
-    display: flex;
     overflow: hidden;
+    background-color: #ede7e3;
+
 }
 
 aside{
     width: 25%;
-    min-height: 100vh;
+    min-height: 100%;
     overflow-y: auto;
 }
 
@@ -49,7 +50,7 @@ img {
 
 section {
     background-color: bisque;
-    height: 85%;
+    height: 75%;
     overflow-y: scroll;
 }
 
@@ -166,4 +167,10 @@ section {
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+#contenido {
+    width: 100%;
+    height: 83%;
+    display: flex;
 }

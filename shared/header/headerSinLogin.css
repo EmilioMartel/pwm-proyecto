@@ -64,7 +64,7 @@ nav a {
     margin: 10px;
 }
 
-.boton {
+.boton{
     background-color: #0077b6;
     color: white;
     padding: 8px 15px;
@@ -73,11 +73,11 @@ nav a {
     cursor: pointer;
 }
 
-.boton:hover {
+.boton a:hover {
     background-color: #f4a261;
 }
 
-a {
+button a {
     text-decoration: none;
-    color:white ;
+    color: white;
 }
