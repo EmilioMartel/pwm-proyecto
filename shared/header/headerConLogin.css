@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #ede7e3;
+    padding: 10px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    margin-left: 10px;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.user-link {
+    text-decoration: none;
+    color: black;
+}
+

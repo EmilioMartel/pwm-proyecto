@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME MINDER</title>
+    <link rel="stylesheet" href="friend-list.css">
+    <link rel="stylesheet" href="../../shared/header/headerConLogin.css">
+    <link rel="stylesheet" href="../../shared/footer/footer.css">
+    <link rel="stylesheet" href="../components/friend-card/friend-card.css">
+    <link rel="stylesheet" href="../components/friend-request/friend-request.css">
+    <link rel="stylesheet" href="../components/friend-unconfirmed-request/friend-uncorfirmed-request.css">
+    <script src="../../xlu-include-file.js"></script>
+</head>
+<body>
+
+    <header id="main_header" xlu-include-file="../../shared/header/headerConLogin.html">
+
+    </header>
+
+    <div class="container-page-friends">
+        <div class="friends-managment">
+            <div class="tabs">
+                <span class="diana" id="uno"></span>
+                <a href="#uno" class="tab-e">Amigos</a>
+                <span class="diana" id="dos"></span>
+                <a href="#dos" class="tab-e">Solicitudes Pendientes</a>
+
+                <div id="pnl_1">
+                    <div class="container-friends">
+                        <div id="friend" xlu-include-file="../components/friend-card/friend-card.html"></div>
+                        
+                    </div>
+                </div>
+
+                <div id="pnl_2">
+                    <div class="container-friends">
+                        <div id="friend" xlu-include-file="../components/friend-unconfirmed-request/friend-unconfirmed-request.html"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-search">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="result-list">
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="main_footer" xlu-include-file="../../shared/footer/footer.html">
+        
+    </footer>
+
+    <script>
+        xLuIncludeFile();
+    </script>
+
+</body>
+
+
+
+</html>

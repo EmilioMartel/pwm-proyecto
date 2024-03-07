@@ -1,0 +1,172 @@
+/* Font de la aplicación web */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+#presentation-p {
+    text-align: center;
+    width: 60%;
+    font-size: x-large;
+}
+
+mark {
+    color: #f4a261;
+    background-color: white;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 70%;
+    text-align: justify;
+}
+
+h1 {
+    color: #0077b6;
+    text-align: center;
+}
+#image-zone{
+    width: 30%;
+}
+
+#imagen-homepage {
+    width: 300px;
+    height: 300px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.titulo-seccion {
+    margin-bottom: 20px;
+    color: #0077b6;
+    text-align: center;
+}
+
+.tarjetas {
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.caracteristica1,
+.caracteristica2,
+.caracteristica3,
+.caracteristica4 {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 200px; 
+    margin: 10px; 
+}
+
+.caracteristica1 img,
+.caracteristica2 img,
+.caracteristica3 img,
+.caracteristica4 img {
+    max-width: 80px;
+    border: 2px solid #f4a261;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.video-tutorial {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuadro-texto {
+    flex: 1;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-image: linear-gradient(to top, #ede7e3 0%, #0077b6 100%);
+    text-align: justify;
+}
+
+.cuadro-texto h2 {
+    color: white;
+}
+
+.video {
+    flex: 1;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: none; 
+    border-radius: 10px; 
+}
+
+.preguntas-respuestas {
+    text-align: center;
+    margin: 20px;
+}
+
+#FAQ {
+    width: 80px; 
+    height: 80px;
+}
+
+.preguntas-respuestas h2 {
+    color: #0077b6;
+}
+
+.preguntas-respuestas p {
+    font-size: 20px;
+    margin-top: 20px; 
+}
+
+.pregunta {
+    margin-top: 20px; 
+    border: 1px solid #ddd; 
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #ede7e3;
+}
+
+.pregunta h3 {
+    color: #0077b6;
+}
+
+.pregunta p {
+    margin-top: 10px;
+}
+
+.pregunta ol {
+    margin-top: 10px;
+}
+
+.pregunta ol li {
+    margin-top: 5px;
+}
+
+

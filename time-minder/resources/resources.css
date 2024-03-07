@@ -1,0 +1,78 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+}
+
+aside {
+    width: 30%;
+    min-width: 300px; /* Añade un ancho mínimo para evitar que el aside sea demasiado estrecho */
+    height: 95vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    background-color: blueviolet;
+    display: flex;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenido {
+    height: 70vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.files {
+    margin: 10px;
+    height: 80px;
+    width: 80px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-custom {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(108, 104, 104);
+    color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.btn-custom:hover {
+    cursor: pointer;
+}
+
+footer {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+}
