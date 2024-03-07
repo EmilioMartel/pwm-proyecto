@@ -111,6 +111,13 @@ body{
 
 .link {
     color: rgb(0, 42, 255); 
+  font-size: 1em; 
+  text-decoration: underline; /* Subraya el texto para que parezca un enlace */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es un enlace */
+}
+
+.link {
+    color: rgb(0, 42, 255); 
     font-size: 1em; 
     text-decoration: underline; 
     cursor: pointer; 
