@@ -186,7 +186,7 @@ const showModal = () => {
     // Crea el HTML del modalContainer
     const modalContainerHTML = `
         <div id="modalForm" class="modal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div class="modal-contenido" style="width: 50%; height: 45%; background-color: gray; border-radius: 10px; padding: 20px; color: #fff;">
+            <div class="modal-contenido" style="width: 50%; height: fit-content; background-color: gray; border-radius: 10px; padding: 20px; color: #fff;">
                 <h1>Crear evento</h1>
                 <form id="eventoForm" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
                     ${crearInput('Nombre')}
