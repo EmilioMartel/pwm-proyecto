@@ -1,38 +1,40 @@
 .contenedor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #0077B6;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    width: 300px; /* O el ancho que prefieras */
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .titulo{
-
+    margin: 0;
+    color: #00ff00;
 }
 
-.contenido{
-    background-color: rgb(207, 203, 203);
-    padding: 5px;
+.price {
+    font-size: 3em;
+    margin: 20px 0;
 }
 
-.contenedor_precio{
-    background-color: red;
-    margin: 5px;
-    min-height: 50px;
+.contenido ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.caracteristica {
+    margin: 10px 0;
+    text-align: left;
+}
+  
+.checkmark {
+    color: #00ff00;
+    margin-right: 10px;
 }
 
-.precio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.caracteristicas{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.caracteristica{
-    margin: 10px;
-    padding: 10px;
-    background-color: darkgrey;
+.contenedor:hover {
+    transform: scale(1.05);
 }
