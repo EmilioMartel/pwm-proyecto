@@ -13,8 +13,8 @@ form {
 aside {
     width: 30%;
     min-width: 300px; /* Añade un ancho mínimo para evitar que el aside sea demasiado estrecho */
-    height: 95vh;
-    background-color: aqua;
+    min-height: 82vh;
+    background-color: gainsboro;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,23 +23,32 @@ aside {
 
 main {
     width: 100%;
-    background-color: blueviolet;
+    background-color: ghostwhite;
     display: flex;
 }
 section {
+    width: 100%;
+    background-color: bisque;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+input {
+    margin-bottom: 5px;
+}
+
 #contenido {
-    height: 70vh;
-    width: 100%;
-    background-color: red;
+    width: 80%;
+    border: 2px dotted black;
+    background-color: beige;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    overflow-y: scroll;
+
+    box-shadow: 10px 10px 90px rgba(0, 0, 0, 0.831);
 }
 
 .files {
@@ -58,21 +67,42 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+
+footer {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+}
+
 .btn-custom {
-    width: 200px;
-    height: 50px;
-    background-color: rgb(108, 104, 104);
+    height: 60px;
+    min-width: 8rem;
+    width: 10%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
     color: white;
-    border-radius: 10px;
-    margin: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0px 5px rgb(200, 198, 198); 
+    background-color: #2fbe19;
+
 }
 
 .btn-custom:hover {
     cursor: pointer;
 }
 
-footer {
-    background-color: lightgrey;
-    padding: 10px;
-    text-align: center;
+.btn-custom:active {
+    transition: all ease-out 10ms;
+    box-shadow: 0 1px whitesmoke;
+    transform: translateY(4px);
+}
+
+.btn-zone {
+    margin-top: 20px;
 }
