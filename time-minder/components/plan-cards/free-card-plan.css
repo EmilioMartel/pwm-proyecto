@@ -7,11 +7,12 @@
     width: 300px; /* O el ancho que prefieras */
     text-align: center;
     transition: transform 0.3s ease;
+    min-height: 350px;
 }
 
 .titulo{
     margin: 0;
-    color: #00ff00;
+    color: #FFFFFF;
 }
 
 .price {
