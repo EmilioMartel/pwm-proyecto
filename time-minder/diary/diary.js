@@ -69,7 +69,7 @@ function writeMonth(month) {
     let j = 1;
     for (let i = lastDay(); i < 6; i++) {
         const day = (j < 10) ? "0" + j : j;
-        const postMonth = (monthNumber + 2 < 10) ? "0" + (monthNumber + 2) : monthNumber + 2;
+        let postMonth = (monthNumber + 2 < 10) ? "0" + (monthNumber + 2) : monthNumber + 2;
         let year = currentYear;
 
         if (postMonth > 12) {
