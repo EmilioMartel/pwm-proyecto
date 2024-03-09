@@ -4,4 +4,4 @@ La aplicación web TimeMinder representa una solución para la gestión eficient
 
 ### Enlace a Figma [aquí](https://www.figma.com/file/qLt2Ujj3YRBOaIwWCkAKXA/PWM---Proyecto?type=design&node-id=0%3A1&mode=design&t=ckZ7yHmUY0bu83s7-1)
 
-### Enlace a la presentación del [video](https://drive.google.com/file/d/1w3lGEQNRZBqUW2Fuk3FOgRt4MdJCWGh9/view?usp=drive_link)
+### Enlace a la presentación del [video](https://drive.google.com/file/d/1w3lGEQNRZBqUW2Fuk3FOgRt4MdJCWGh9/view?usp=sharing)
