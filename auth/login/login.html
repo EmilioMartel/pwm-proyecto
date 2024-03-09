@@ -26,33 +26,26 @@
           id="login-section"
         />
 
-        <form>
-          <label for="correo">Correo:</label>
-          <input
-            type="text"
-            id="correo"
-            name="correo"
-            placeholder="Ingrese su correo"
-          />
-
-          <label for="contrasena">Contraseña:</label>
-          <input
-            type="password"
-            id="contrasena"
-            name="contrasena"
-            placeholder="Ingrese su contraseña"
-          />
-        </form>
+        <form class="form">
+          <div class="form_container">
+              <div class="form_group">
+                  <input type="text" id="mail" class="form_input" placeholder=" ">
+                  <label for="mail" class="form_label">Correo:</label>
+                  <span class="form_line"></span>
+              </div>
+              <div class="form_group">
+                  <input type="text" id="password" class="form_input" placeholder=" ">
+                  <label for="password" class="form_label">Contraseña:</label>
+                  <span class="form_line"></span>
+              </div>
+          </div>
+      </form>
 
         <p>
-          <a href="#" aria-labelledby="olvide-contrasena"
-            >¿Olvidé mi contraseña?</a
-          >
+          <a href="#" aria-labelledby="olvide-contrasena">¿Olvidé mi contraseña?</a>
         </p>
 
-        <button class="boton"> 
-          <a href="../../time-minder/diary/diary.html">Iniciar sesión</a>
-        </button>
+        <button class="boton" onclick="window.location.href='../../time-minder/diary/diary.html'">Iniciar sesión</button>
       </div>
     </main>
 

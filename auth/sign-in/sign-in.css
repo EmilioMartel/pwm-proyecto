@@ -81,7 +81,7 @@ body{
 }
 
 .form_submit{
-    background:  #3866f2;
+    background: #3866f2;
     color: #fff;
     font-weight: 300;
     font-size: 1rem;
@@ -91,7 +91,14 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center; 
+    text-decoration: none;
 }
+
+.form_submit:hover {
+    background-color: #f4a261;
+}
+
 
 .form_line_group {
     display: flex;

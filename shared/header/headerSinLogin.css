@@ -64,20 +64,22 @@ nav a {
     margin: 10px;
 }
 
-.boton{
+.boton {
     background-color: #0077b6;
-    color: white;
     padding: 8px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.boton a:hover {
+.boton:hover {
     background-color: #f4a261;
 }
 
-button a {
-    text-decoration: none;
-    color: white;
+.botones-derecha {
+    text-align: center;
 }
+
