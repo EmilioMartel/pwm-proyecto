@@ -195,7 +195,7 @@ const showModal = () => {
                     ${crearInput('Hora de finalización', true)}
                     ${crearInput('Ubicación')}
                     ${crearSelect('Prioridad', ['Alta', 'Media', 'Baja'])}
-                    ${crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio'])}
+                    ${crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio', 'Salud'])}
                     <textarea name="notas" placeholder="Notas..." rows="4"></textarea>
                     <div style="display: flex;">
                         ${crearBoton('Cerrar', cerrarModal, 'closeBtn')}
