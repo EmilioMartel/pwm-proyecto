@@ -3,14 +3,19 @@
     border: none;
     border-radius: 25px;
     color: black;
-    padding: 10px 20px;
-    margin: 20px 0;
+    padding: 15px 30px; 
     cursor: pointer;
+    margin: 20px 0;
     font-weight: bold;
     color: white;
+  
   }
   
   .btn-get-started:hover {
     background-color: #1a5d78;
     
+  }
+
+  .btn-get-started a {
+    text-decoration: none;
   }
