@@ -85,7 +85,7 @@ function writeMonth(month) {
 
 
 
-async function getEventsByUser(id = "user-1", fecha) {
+async function getEventsByUser(id, fecha) {
     const eventResponse = await fetch('http://localhost:3000/events');
     const data = await eventResponse.json();
     
@@ -113,7 +113,6 @@ function getCurrentDate() {
 
 // Función para abrir el modal con eventos del día
 async function abrirModal(fecha) {
-
     const events = await getEventsByUser("user-1",fecha);
 
     eventModal(events);
@@ -285,7 +284,7 @@ function eventModal(eventosDelDia) {
     modalContainer.id = 'miModal';
     modalContainer.className = 'modal';
 
-    // Configura el estilo del modalContainer
+    // Configurar el estilo del modalContainer
     modalContainer.style.display = 'flex';
     modalContainer.style.flexDirection = 'column';
     modalContainer.style.alignItems = 'center';
@@ -303,19 +302,33 @@ function eventModal(eventosDelDia) {
     modalContent.style.padding = '20px';
     modalContent.style.color = '#fff';
 
-    // Crear un elemento de lista ul para los eventos
-    const listaEventos = document.createElement('ul');
-
-    // Iterar sobre los eventos del día y crear elementos li para cada evento
     eventosDelDia.forEach(event => {
-        //TODO: añadir los atributos de los eventos
         const itemEvento = document.createElement('li');
-        itemEvento.textContent = event.name;
-        listaEventos.appendChild(itemEvento);
-    });
 
-    // Agregar la lista de eventos al contenido del modal
-    modalContent.appendChild(listaEventos);
+        const listaDatosEvento = document.createElement('ul');
+        const listaEventos = document.createElement('ul');
+
+        // Iterar sobre las propiedades del evento y crear elementos li para cada una
+        Object.entries(event).forEach(([key, value]) => {
+            const itemDatoEvento = document.createElement('li');
+            itemDatoEvento.textContent = `${key}: ${value}`;
+
+            // Agregar clases CSS para los elementos li
+            itemDatoEvento.classList.add('evento-info'); // Clase para el li
+            itemDatoEvento.classList.add('evento-info-item'); // Clase para los elementos li dentro de la lista de datos
+
+            listaDatosEvento.appendChild(itemDatoEvento);
+        });
+
+        // Agregar la lista de datos del evento al elemento li principal
+        itemEvento.appendChild(listaDatosEvento);
+
+        // Añadir el elemento li a la lista ul
+        listaEventos.appendChild(itemEvento);
+
+        // Agregar la lista de eventos al contenido del modal
+        modalContent.appendChild(listaEventos);
+    });
 
     // Crear el botón "Cerrar" y agregar un manejador de eventos
     const cerrarModalBtn = document.createElement('button');
@@ -334,3 +347,4 @@ function eventModal(eventosDelDia) {
     // Agregar el modal al cuerpo del documento
     body.appendChild(modalContainer);
 }
+

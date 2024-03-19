@@ -502,6 +502,11 @@ li {
 }
 
 
+.closeBtn {
+    width: 80px;
+    height: 30px;
+}
+
 .closeBtn:hover{
     background-color: red;
     color: white;
@@ -509,4 +514,23 @@ li {
 
 input {
     width: 200px;
+}
+
+
+.evento-info {
+    list-style: none;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para la clave */
+.evento-info span.key {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para el valor */
+.evento-info span.value {
+    color: #666;
 }
