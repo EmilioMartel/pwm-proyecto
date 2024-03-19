@@ -85,26 +85,28 @@ function writeMonth(month) {
 
 
 
-async function getEventsByUser(id = "user-1") {
+async function getEventsByUser(id = "user-1", fecha) {
     const eventResponse = await fetch('http://localhost:3000/events');
     const data = await eventResponse.json();
     
     data.forEach(event => {
-    
-        if (event.userId === id && event.date == getCurrentDate()) {
+        if (event.userId == id && event.date == fecha) {
             console.log(event)
+            //TODO: inyectar en html los eventos
             // Aquí puedes realizar cualquier operación que desees con el evento que cumple la condición
         }
     });
-
 }
 
 function getCurrentDate() {
     const fechaActual = new Date();
+    const day = fechaActual.getDate();
+    const month = (fechaActual.getMonth() + 1).toString();
+    const year = fechaActual.getFullYear();
 
-    // Formatear la fecha en el formato esperado (por ejemplo, "DD-MM-YYYY")
-    const formattedDate = `${fechaActual.getDate().toString().padStart(2, '0')}/${(fechaActual.getMonth() + 1).toString().padStart(2, '0')}/${fechaActual.getFullYear()}`;
+    const formattedDate = `${day}-${month}-${year}`;
     return formattedDate;
+
 }
 
 
@@ -113,7 +115,7 @@ function abrirModal(fecha) {
 
     const currentDate = getCurrentDate();
 
-    getEventsByUser();
+    getEventsByUser("user-1",fecha);
 
     // Generar algunos eventos de ejemplo
     const eventosDelDia = [

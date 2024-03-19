@@ -75,7 +75,7 @@
             "id": "event-1",
             "userId": "user-1",
             "name": "evento 1",
-            "date": "18/03/2024",
+            "date": "19/3/2024",
             "start": "12:30",
             "end": "17:45",
             "ubication": "Las Palmas",
@@ -88,7 +88,7 @@
             "id": "event-2",
             "userId": "user-3",
             "name": "evento 2",
-            "date": "05/03/2024",
+            "date": "5/3/2024",
             "start": "12:30",
             "end": "17:45",
             "ubication": "Las Palmas",
@@ -99,9 +99,9 @@
         },
         {
             "id": "event-3",
-            "userId": "user-4",
+            "userId": "user-1",
             "name": "evento 4",
-            "date": "05/03/2024",
+            "date": "27/3/2024",
             "start": "12:30",
             "end": "17:45",
             "ubication": "Las Palmas",
@@ -115,7 +115,7 @@
         {
             "id": "resource-1",
             "name": "apuntes MN",
-            "date": "05/03/2024",
+            "date": "5/3/2024",
             "category": "deportes"
         }
     ],
