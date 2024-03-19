@@ -89,13 +89,14 @@ async function getEventsByUser(id = "user-1", fecha) {
     const eventResponse = await fetch('http://localhost:3000/events');
     const data = await eventResponse.json();
     
+    let events = [];
     data.forEach(event => {
         if (event.userId == id && event.date == fecha) {
-            console.log(event)
-            //TODO: inyectar en html los eventos
-            // Aquí puedes realizar cualquier operación que desees con el evento que cumple la condición
+            events.push(event);
         }
     });
+
+    return events;
 }
 
 function getCurrentDate() {
@@ -111,19 +112,11 @@ function getCurrentDate() {
 
 
 // Función para abrir el modal con eventos del día
-function abrirModal(fecha) {
+async function abrirModal(fecha) {
 
-    const currentDate = getCurrentDate();
+    const events = await getEventsByUser("user-1",fecha);
 
-    getEventsByUser("user-1",fecha);
-
-    // Generar algunos eventos de ejemplo
-    const eventosDelDia = [
-        `Evento 1 el ${currentDate}`,
-        `Evento 2 el ${currentDate}`,
-        // Agrega más eventos según sea necesario
-    ];
-    eventModal(eventosDelDia);
+    eventModal(events);
 }
 
 
@@ -314,9 +307,10 @@ function eventModal(eventosDelDia) {
     const listaEventos = document.createElement('ul');
 
     // Iterar sobre los eventos del día y crear elementos li para cada evento
-    eventosDelDia.forEach(evento => {
+    eventosDelDia.forEach(event => {
+        //TODO: añadir los atributos de los eventos
         const itemEvento = document.createElement('li');
-        itemEvento.textContent = evento;
+        itemEvento.textContent = event.name;
         listaEventos.appendChild(itemEvento);
     });
 
