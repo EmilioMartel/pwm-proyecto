@@ -176,5 +176,48 @@ body{
 
 @media only screen and (max-width: 600px) {
     /* Tus estilos para móviles aquí */
-    
+    .form{
+        visibility: hidden;
+    }
+
+    .form_line_input {
+        visibility: visible;
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .form_line_input:first-child {
+        margin-right: 0em;
+    }
+
+    .form_line_input:focus + .form_label,
+    .form_line_input:not(:placeholder-shown) + .form_label{
+        transform: translateY(-12px) scale(.9);
+    }
+
+    .form_input{
+        visibility: visible;
+        width: 90%;
+    }
+
+    .form_input:focus + .form_label,
+    .form_input:not(:placeholder-shown) + .form_label{
+        transform: translateY(-12px) scale(.9);
+    }
+
+    .form_label{
+        visibility: visible;
+        top: 5;
+        left: 0.9em;
+    }
+
+    .form_line_join_group {
+        visibility: visible;
+        display: flex;
+        padding-left: .3em;
+    }
+
+    .form_submit{
+        visibility: visible;
+    }
 }
