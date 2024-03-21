@@ -303,10 +303,8 @@ function eventModal(eventosDelDia) {
     modalContent.style.color = '#fff';
 
     eventosDelDia.forEach(event => {
-        const itemEvento = document.createElement('li');
 
         const listaDatosEvento = document.createElement('ul');
-        const listaEventos = document.createElement('ul');
 
         // Iterar sobre las propiedades del evento y crear elementos li para cada una
         Object.entries(event).forEach(([key, value]) => {
@@ -320,14 +318,8 @@ function eventModal(eventosDelDia) {
             listaDatosEvento.appendChild(itemDatoEvento);
         });
 
-        // Agregar la lista de datos del evento al elemento li principal
-        itemEvento.appendChild(listaDatosEvento);
-
-        // Añadir el elemento li a la lista ul
-        listaEventos.appendChild(itemEvento);
-
         // Agregar la lista de eventos al contenido del modal
-        modalContent.appendChild(listaEventos);
+        modalContent.appendChild(listaDatosEvento);
     });
 
     // Crear el botón "Cerrar" y agregar un manejador de eventos
