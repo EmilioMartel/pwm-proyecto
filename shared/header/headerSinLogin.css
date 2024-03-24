@@ -1,8 +1,6 @@
-
-
 header {
     background-color: #ede7e3;
-    padding: 10px;
+    padding: 0.625em;
     color: black;
     display: flex;
     justify-content: space-between;
@@ -10,13 +8,13 @@ header {
 }
 
 #logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 3.125em;
+    height: 3.125em;
+    margin-right: 0.625em;
 }
 
 .logo-text {
-    margin-left: 10px;
+    margin-left: 0.625em;
     color: #0077b6;
     font-weight: bold;
 }
@@ -31,7 +29,7 @@ nav {
 nav a {
     color: black;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 1.25em;
 }
 
 .idiomas {
@@ -47,26 +45,26 @@ nav a {
     display: none;
     position: absolute;
     background-color: #ede7e3;
-    padding: 10px;
+    padding: 0.625em;
     list-style: none;
     margin: 0;
 }
 
 .idiomas ul li {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125em;
 }
 
 #idiomas {
-    width: 20px;
-    height: 20px;
-    margin: 10px;
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0.625em;
 }
 
 .boton {
     background-color: #0077b6;
-    padding: 8px 15px;
+    padding: 0.5em 0.9375em;
     border: none;
-    border-radius: 7px;
+    border-radius: 0.4375em;
     cursor: pointer;
     color: white;
     text-decoration: none;
