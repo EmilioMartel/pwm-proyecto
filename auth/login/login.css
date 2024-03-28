@@ -109,3 +109,29 @@ main {
     transform-origin: left top;
     color: #3866f2;
 }
+
+/* Reglas de medios para dispositivos tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .login-section img {
+        width: 7.375rem;   
+    }    
+}
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .login-section {
+        padding: 1.5em 1.5em;
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .login-section h1 {
+        font-size: 1.25rem;
+    }
+
+    .login-section img {
+        width: 5.375rem;
+    }
+    
+}
