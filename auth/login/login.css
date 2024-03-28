@@ -1,6 +1,5 @@
-
 main {
-    padding: 24px 0px;
+    padding: 1.5em 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -10,28 +9,28 @@ main {
 
 .login-section {
     text-align: left;
-    padding: 40px 40px;
+    padding: 2.5em 2.5em;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    max-width: 25rem;
     width: 100%;
 }
 
 .login-section h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
 .login-section img {
-    width: 150px;
-    margin: 20px auto 20px;
+    width: 9.375rem;
+    margin: 1.25rem auto 1.25rem;
     display: block;
 }
 
 .login-section p {
-    font-size: 16px;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 0.3125rem;
 }
 
 .login-section a {
@@ -39,15 +38,15 @@ main {
     cursor: pointer;
     color: #333;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .login-section button {
     background-color: #0077b6;
     color: white;
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -58,56 +57,55 @@ main {
 }
 
 .a:hover {
-
     background-color: #0077b6;
     color: white;
-    padding: 8px 15px;
+    padding: 0.5em 0.9375em;
     border: none;
-    border-radius: 7px;
+    border-radius: 0.4375rem;
     cursor: pointer;
     text-decoration: none;
 }
 
-.form{
+.form {
     background-color: #fff;
     margin: auto;
     width: 90%;
-    max-width: 400px;
+    max-width: 25rem;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
 }
 
-.form_group{
+.form_group {
     position: relative;
     --color: #575757;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 
-.form_input{
+.form_input {
     width: 100%;
     background: none;
     color: #706c6c;
     font-size: 1rem;
-    padding: .6em .3em;
+    padding: 0.6em 0.3em;
     border: none;
     outline: none;
     border-bottom: 1px solid var(--color);
 }
 
-.form_label{
+.form_label {
     color: var(--color);
     cursor: pointer;
     position: absolute;
     top: 0;
-    left: 5px;
-    transform: translateY(10px);
-    transition: transform .5s, color .3s;
+    left: 0.3125rem;
+    transform: translateY(0.625rem);
+    transition: transform 0.5s, color 0.3s;
 }
 
 .form_input:focus + .form_label,
-.form_input:not(:placeholder-shown) + .form_label{
-    transform: translateY(-12px) scale(.7);
+.form_input:not(:placeholder-shown) + .form_label {
+    transform: translateY(-0.75rem) scale(0.7);
     transform-origin: left top;
     color: #3866f2;
 }
