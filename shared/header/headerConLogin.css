@@ -18,6 +18,16 @@ header {
     margin-right: 0.625em;
 }
 
+#menu-icono {
+    display: none;
+}
+
+.menu-icono {
+    width: 1.5625em;
+    display: none;
+    cursor: pointer;
+}
+
 .logo-text {
     margin-left: 0.625em;
     color: #0077b6;
@@ -60,4 +70,43 @@ nav a {
 .user-link {
     text-decoration: none;
     color: black;
+}
+
+/* Reglas de medios para dispositivos tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    #logo {
+        display: none;
+    }
+}
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    #logo {
+        display: none;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .menu-icono {
+        display: initial;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ede7e3; 
+        display: none;
+    }
+
+    nav ul li {
+        width: 100%; 
+    }
+
+    #menu-icono:checked ~ nav {
+        display: initial;
+    }
 }
