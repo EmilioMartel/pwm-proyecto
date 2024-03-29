@@ -101,6 +101,7 @@ nav a {
         background-color: #ede7e3; 
         display: none;
         font-size: small;
+        text-align: center;
     }
 
     nav ul li {
