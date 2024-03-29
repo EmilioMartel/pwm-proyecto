@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 #logo {
@@ -43,7 +44,7 @@ nav a {
 }
 
 .idiomas {
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -101,6 +102,7 @@ nav a {
     #logo {
         display: none;
     }
+
     .menu-icono {
         display: initial;
     }
@@ -112,10 +114,10 @@ nav a {
         right: 0;
         background-color: #ede7e3; 
         display: none;
-    }
-
-    nav ul li {
-        width: 100%; 
+        font-size: small;
+        padding-bottom: 10px;
+        text-align: center;
+        z-index: 1;
     }
 
     #menu-icono:checked ~ nav {
