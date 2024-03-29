@@ -102,6 +102,7 @@ nav a {
         display: none;
         font-size: small;
         text-align: center;
+        z-index: 1;
     }
 
     nav ul li {
