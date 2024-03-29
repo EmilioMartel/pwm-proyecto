@@ -10,6 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    white-space: nowrap;
 }
 
 #logo {
@@ -37,6 +38,7 @@ header {
 nav {
     display: flex;
     flex-grow: 1;
+    white-space: nowrap;
     justify-content: center;
     align-items: center;
 }
