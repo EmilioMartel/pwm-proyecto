@@ -17,34 +17,39 @@
 
     </header>
 
-    <form class="form">
+    <form class="form" action="../login/login.html" method="post" id="siginForm">
         <div class="form_container">
 
             <div class="form_line_group">
                 <div class="form_group">
-                    <input type="text" id="name" class="form_line_input" placeholder=" ">
+                    <input type="text" id="name" class="form_line_input" placeholder=" " required pattern="[A-Za-z\s]+">
                     <label for="name" class="form_label">Nombre:</label>
                     <span class="form_line"></span>
+                    <div class="error-message" id="nameError"></div>
                 </div>
                 <div class="form_group">
-                    <input type="text" id="surname" class="form_line_input" placeholder=" ">
+                    <input type="text" id="surname" class="form_line_input" placeholder=" " required pattern="[a-zA-Z\ ]+">
                     <label for="surname" class="form_label">Apellidos:</label>
                     <span class="form_line"></span>
                 </div>
             </div>
 
             <div class="form_group">
-                <input type="text" id="mail" class="form_input" placeholder=" ">
+                <input type="text" id="mail" class="form_input" placeholder=" " required
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
                 <label for="mail" class="form_label">Correo:</label>
                 <span class="form_line"></span>
+                <div class="error-message" id="emailError"></div>
             </div>
             <div class="form_group">
-                <input type="password" id="password" class="form_input" placeholder=" ">
+                <input type="password" id="password" class="form_input" placeholder=" " required
+                minlength="6">
                 <label for="password" class="form_label">Crear contraseña:</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="password" id="confirm_password" class="form_input" placeholder=" ">
+                <input type="password" id="confirm_password" class="form_input" placeholder=" " required
+                minlength="6">
                 <label for="confirm_password" class="form_label">Confirmar contraseña:</label>
                 <span class="form_line"></span>
             </div>
@@ -54,7 +59,7 @@
                 <label for="TermYCond"><a href="#" class="link">Terminos y condiciones</a></label>
             </div>
 
-            <a class="form_submit" href="../login/login.html">Registrarse</a>
+            <button class="form_submit" href="../login/login.html">Registrarse</button>
         </div>
     </form>
 
@@ -62,12 +67,30 @@
         
     </footer>
 
-    <script>
-        xLuIncludeFile();
-    </script>
-
 </body>
 
 
 
 </html>
+
+<script>
+    xLuIncludeFile();
+    
+    window.onload = function() {
+        var name = document.getElementById("name");
+        // Verifica si el campo es válido cuando se intenta enviar el formulario
+        document.getElementById('yourFormId').addEventListener('submit', function() {
+            // Si el campo es inválido, establece el mensaje personalizado
+            if (!name.checkValidity()) {
+                name.setCustomValidity("El nombre introducido es erróneo!!");
+            }
+    });
+
+    // Limpia el mensaje personalizado cada vez que el usuario cambia el valor
+    name.addEventListener('input', function() {
+        name.setCustomValidity("");
+    });
+};
+
+
+</script>
