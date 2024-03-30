@@ -99,7 +99,7 @@ span.diana {
     background-color: #f0f0f0;
     border-radius: 20px;
     padding: 5px;
-  }
+}
   
 .search-input {
     border: none;
@@ -176,3 +176,29 @@ span.diana {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+@media only screen and (max-width: 600px) {
+    .container-page-friends{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0em;
+        margin-bottom: 3em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .friends-managment{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-search{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-search{
+        margin: 0px;
+    }
+}
