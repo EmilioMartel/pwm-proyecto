@@ -7,7 +7,7 @@
     margin-bottom: 6em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
     /* Tus estilos para móviles aquí */
     .cards-container{
         flex-direction: column;

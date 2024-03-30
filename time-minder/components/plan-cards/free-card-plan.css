@@ -39,3 +39,29 @@
 .contenedor:hover {
     transform: scale(1.05);
 }
+
+@media only screen and (max-width: 1024px) {
+    .contenedor{
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        width: 300px;
+        min-height: 262px;
+    }
+
+    .price {
+        font-size: 2.25em;
+        margin: 15px 0;
+    }
+
+    .caracteristica {
+        margin: 8px 0;
+        text-align: left;
+    }
+      
+    .checkmark {
+        color: #00ff00;
+        margin-right: 8px;
+    }
+}
+
