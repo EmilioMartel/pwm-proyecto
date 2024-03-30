@@ -133,6 +133,32 @@
                     "datetime": "10/3/2024 15:03:24",
                     "owner": "user-3",
                     "message": "bien y tú?"
+                },
+                {
+                    "datetime": "10/3/2024 15:03:24",
+                    "owner": "user-1",
+                    "message": "que bueno, me alegro!!"
+                }
+            ]
+        },
+        {
+            "id": "chat2",
+            "members": ["user-1","user3"],
+            "data": [
+                {
+                    "datetime": "10/3/2024 15:03:24",
+                    "owner": "user-1",
+                    "message": "este es otro chat?"
+                },
+                {
+                    "datetime": "10/3/2024 15:03:24",
+                    "owner": "user-3",
+                    "message": "si lo es"
+                },
+                {
+                    "datetime": "10/3/2024 15:03:24",
+                    "owner": "user-1",
+                    "message": "que bueno, funciona el tema!!"
                 }
             ]
         }
