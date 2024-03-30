@@ -3,48 +3,121 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+}
+
+.menu {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    right: 15px;
+    top: 100px;
+    background-color: #0077b6;
+    color: white;
+    z-index: 100;
 }
 
 .profile-container {
     display: flex;
-    flex: 1;
-}
-
-.sidebar {
-    width: 15%;
-    background-color: #f0f0f0;
-    padding: 20px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar h2 {
-    color: #0077b6;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
     flex: 1;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
+.barra-lateral {
+    width: 250px;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: #ede7e3;
+    transition: width 0.5s ease, left 0.5s ease;
+    z-index: 50;
 }
 
-.sidebar a {
+.profile-container .barra-reducida {
+    width: 80px;
+}
+
+.barra-lateral .panel {
+    width: 100%;
+    height: 45px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.barra-lateral ion-icon {
+    min-width: 80px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.barra-lateral .panel span {
+    margin-left: 5px;
+    font-size: 20px;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+.barra-lateral span {
+    font-size: 18px;
+    text-align: left;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.barra-lateral span.oculto {
+    opacity: 0;
+    width: 0;
+}
+
+.barra-lateral .navegacion li {
+    margin-left: 0;
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.barra-lateral .navegacion ul {
+    padding: 0;
+}
+
+.barra-lateral .navegacion a {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #ede7e3;
     color: black;
 }
 
-.sidebar li:last-child {
-    margin-top: auto;
+.barra-lateral .navegacion a:hover {
+    color: #0077b6;
 }
 
-.main-content  {
+.barra-lateral .navegacion ion-icon {
+    min-width: 50px;
+    font-size: 20px;
+}
+
+#editarInformacion {
+    background-color: whitesmoke;
+}
+
+.main-content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 1.25em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,44 +126,73 @@ body {
 }
 
 .main-content h2 {
-    color: #0077b6;  
+    color: #0077b6;
 }
 
 .profile-image {
-    width: 100px;
-    height: 100px;
+    width: 6.25em;
+    height: 6.25em;
     border-radius: 50%;
-    margin-top: 10px;
+    margin-top: 0.625em;
 }
 
 .change-image-btn {
-    margin-top: 10px;
+    margin-top: 0.625em;
 }
 
 form {
-    margin-top: 20px;
+    margin-top: 1.25em;
 }
 
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 0.625em;
     text-align: left;
 }
 
 input,
 select {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 0.5em;
+    margin-top: 0.3125em;
     box-sizing: border-box;
 }
 
 button {
-    padding: 10px;
+    padding: 1.25em;
     background-color: #0077b6;
     color: white;
     border: none;
     cursor: pointer;
-    margin: 20px;
+    margin: 1.25em;
 }
 
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .profile-container .barra-lateral {
+        position:absolute;
+        height: 100%;
+        left: -300px;
+    }
+
+    .profile-container .barra-lateral.max-barra-lateral {
+        left: 0;
+    }
+
+    .menu {
+        display: initial;
+    }
+
+    .menu ion-icon:nth-child(2) {
+        display: none;
+    }
+
+    .main-content h2 {
+        font-size: x-large;  
+    }
+
+    .profile-image {
+        width: 5.25em;
+        height: 5.25em;
+    }
+}
