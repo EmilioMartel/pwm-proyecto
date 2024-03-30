@@ -37,6 +37,7 @@
                 <div id="pnl_2">
                     <div class="container-friends">
                         <div xlu-include-file="../components/friend-unconfirmed-request/friend-unconfirmed-request.html"></div>
+                        
                     </div>
                 </div>
 
@@ -54,18 +55,18 @@
                 </button>
             </div>
             <div class="result-list">
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
-                <div id="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
+                <div class="friend" xlu-include-file="../components/friend-request/friend-request.html"></div>
             </div>
         </div>
     </div>
@@ -74,8 +75,31 @@
         
     </footer>
 
-    <script>
-        xLuIncludeFile();
-    </script>
-
 </html>
+
+<script>
+    xLuIncludeFile();
+
+    fetch('../../cristian.json')
+        .then(response => response.json())
+            .then(data => {
+                // Obtener todos los elementos con la clase 'friend'
+                const friendsElements = document.querySelectorAll('.friend');
+
+                // Asegurarse de que hay suficientes usuarios para llenar los elementos
+                for (let i = 0; i < friendsElements.length; i++) {
+                    // Obtén el elemento donde quieres colocar el nombre y apellido
+                    // Esto dependerá de cómo esté estructurado tu componente 'friend'
+                    const nameElement = friendsElements[i].querySelector('.name-search');
+
+                    // Si hay un usuario para este elemento, establece el nombre y apellido
+                    if (data.usuarios[i]) {
+                        const usuario = data.usuarios[i];
+                        nameElement.textContent = `${usuario.nombre} ${usuario.apellido}`;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar los datos de los usuarios:', error);
+            });
+</script>
