@@ -17,7 +17,7 @@
 
     </header>
 
-    <form class="form" action="../login/login.html" method="post" id="siginForm">
+    <form class="form" action="../login/login.html" method="post" id="signinForm">
         <div class="form_container">
 
             <div class="form_line_group">
@@ -75,22 +75,31 @@
 
 <script>
     xLuIncludeFile();
-    
+
     window.onload = function() {
         var name = document.getElementById("name");
-        // Verifica si el campo es válido cuando se intenta enviar el formulario
-        document.getElementById('yourFormId').addEventListener('submit', function() {
-            // Si el campo es inválido, establece el mensaje personalizado
-            if (!name.checkValidity()) {
-                name.setCustomValidity("El nombre introducido es erróneo!!");
-            }
-    });
+        
+        // Establecer un mensaje de validación personalizado en función de la validez inicial del campo
+        if (!name.value) {
+            name.setCustomValidity("Por favor, introduce tu nombre."); // Mensaje si el campo está vacío
+        } else if (!name.validity.valid) {
+            name.setCustomValidity("Ha funcionado!"); // Mensaje para cualquier otra validación que falle
+        } else {
+            name.setCustomValidity(""); // Limpia el mensaje si no hay errores de validación
+        }
 
-    // Limpia el mensaje personalizado cada vez que el usuario cambia el valor
-    name.addEventListener('input', function() {
-        name.setCustomValidity("");
-    });
-};
+        name.addEventListener('input', function() {
+            if (name.validity.valueMissing) {
+                // El campo es requerido y está vacío.
+                name.setCustomValidity("Ha funcionado!");
+            } else {
+                // El campo no está vacío y cumple con cualquier otra restricción.
+                name.setCustomValidity(""); // Se debe limpiar el mensaje personalizado
+            }
+        });
+    };
+
+    
 
 
 </script>
