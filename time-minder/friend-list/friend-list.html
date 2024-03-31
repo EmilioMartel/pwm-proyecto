@@ -106,3 +106,51 @@
                 console.error('Error al cargar los datos de los usuarios:', error);
             });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      // Buscar el span con el ID 'userName'
+      const userNameSpan = document.getElementById("userName");
+
+      try {
+        // Obtener la información del usuario
+        const name = await getInfoUser("user-1");
+
+        // Verificar si se encontró el span
+        if (userNameSpan) {
+          // Modificar el contenido del span
+          userNameSpan.textContent = name;
+        } else {
+          console.error('No se encontró el span con el ID "userName"');
+        }
+      } catch (error) {
+        console.error("Error al obtener la información del usuario:", error);
+      }
+    });
+
+    async function getInfoUser(id) {
+      const eventResponse = await fetch("http://localhost:3000/users");
+      const data = await eventResponse.json();
+
+      let name = "";
+      data.forEach((user) => {
+        if (user.id === id) {
+          name = user.name;
+        }
+      });
+      return name;
+    }
+
+    async function getInfoUser(id) {
+      const eventResponse = await fetch("http://localhost:3000/users");
+      const data = await eventResponse.json();
+
+      let name = "";
+      data.forEach((user) => {
+        if (user.id === id) {
+          name = user.name;
+        }
+      });
+      return name;
+    }
+  </script>

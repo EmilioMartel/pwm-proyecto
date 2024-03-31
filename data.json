@@ -4,6 +4,7 @@
         {
             "id": "user-1",
             "name": "pepe",
+            "lastName": "santana moreno",
             "email": "user1@gmail.com",
             "password": "cifrada",
             "events": [
