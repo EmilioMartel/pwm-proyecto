@@ -83,14 +83,10 @@ function writeMonth(month) {
     dates.innerHTML = html;
 }
 
-
-
-
-
 function getCurrentDate() {
     const fechaActual = new Date();
     const day = fechaActual.getDate();
-    const month = (fechaActual.getMonth() + 1).toString();
+    const month = (fechaActual.getMonth() + 1);
     const year = fechaActual.getFullYear();
 
     const formattedDate = `${day}/${month}/${year}`;
@@ -101,11 +97,11 @@ function getCurrentDate() {
 
 // Función para abrir el modal con eventos del día
 async function abrirModal(fecha) {
-    const {events} = await getEventsByUser("user-1",fecha);
+    console.log(fecha)
+    const {events, nextEvents} = await getEventsByUser("user-1",fecha,fecha);
 
     eventModal(events);
 }
-
 
 const getTotalDays = month => {
     if(month === -1) month = 11;
@@ -293,6 +289,8 @@ function eventModal(eventosDelDia) {
 
     eventosDelDia.forEach(event => {
 
+        console.log(event)
+
         const listaDatosEvento = document.createElement('ul');
 
         // Iterar sobre las propiedades del evento y crear elementos li para cada una
@@ -340,12 +338,12 @@ async function getEventsByUser(id, fechaInicio, fechaFin) {
     const todayFormatted = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
 
     data.forEach(event => {
+
         // Convertir las fechas de los eventos al mismo formato que las fechas proporcionadas
         const eventDate = parseDate(event.date); // Convertir la fecha del evento al formato correcto
         const startRangeDate = parseDate(fechaInicio); // Convertir la fecha de inicio al formato correcto
         const endRangeDate = parseDate(fechaFin); // Convertir la fecha de fin al formato correcto
 
-        // Función para convertir fecha en formato "día/mes/año" a objeto Date
         function parseDate(dateString) {
             const [day, month, year] = dateString.split('/');
             return new Date(`${month}/${day}/${year}`);
@@ -356,8 +354,8 @@ async function getEventsByUser(id, fechaInicio, fechaFin) {
             nextEvents.push(event);
         }
 
-        // Verificar si el evento es de hoy
-        if (event.userId === id && event.date === todayFormatted) {
+        // Verificar si el evento es de hoy        
+        if (event.userId === id && event.date === fechaInicio) {
             events.push(event);
         }
     });
