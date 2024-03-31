@@ -71,8 +71,12 @@ section {
 
 
 .write-zone {
-    height: 16%;
+    display: none;
+}
+
+.show-write-zone {
     display: flex;
+    height: 16%;
     justify-content: flex-end;
     align-items: center;
     background-color: bisque;
@@ -226,7 +230,7 @@ section {
 
 #sidebar {
     display: block;
-    width: 30%;
+    width: 35%;
 }
 
 .toggle-aside-btn {

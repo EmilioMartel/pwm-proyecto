@@ -82,6 +82,8 @@ function addChatListItems(chatList) {
     var ul = document.getElementById('chat-list');
     ul.innerHTML = ''; // Limpiar la lista de chat
     
+    var writeZone = document.getElementById('write-zone'); // Obtener referencia a la zona de escritura
+
     chatList.forEach(function(chat, index) {
         var li = document.createElement('li');
         var img = document.createElement('img');
@@ -93,17 +95,27 @@ function addChatListItems(chatList) {
         li.addEventListener('click', function() {
             // Llamar a la función para cargar los mensajes del chat seleccionado
             addChatMessages([chat]);
+            // Crear writeZone si no existe y mostrarlo cuando se hace clic en un chat
+            if (!writeZone) {
+                writeZone = document.createElement('div');
+                writeZone.id = 'write-zone';
+                writeZone.classList.add('write-zone');
+                writeZone.innerHTML = '<textarea id="input-text" placeholder="Escribe ..."></textarea><button id="send-btn">Enviar</button>';
+                document.querySelector('main').appendChild(writeZone);
+            }
+            writeZone.classList.add('show-write-zone');
         });
         ul.appendChild(li);
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     fetch('http://localhost:3000/chats')
         .then(response => response.json())
         .then(data => {
             // Llamar a la función para agregar los elementos de lista de chat al área de lista de chat
-            addChatListItems(data);
+            addChatListItems(data, document.getElementById('write-zone'));
             
             // Llamar a la función para configurar el botón de alternar el aside
             setupToggleAside();
