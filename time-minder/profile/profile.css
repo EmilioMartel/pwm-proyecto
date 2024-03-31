@@ -6,24 +6,6 @@ body {
     width: 100%;
 }
 
-.menu {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    right: 15px;
-    top: 100px;
-    background-color: #0077b6;
-    color: white;
-    z-index: 100;
-}
-
 .profile-container {
     display: flex;
     position: relative;
@@ -31,42 +13,42 @@ body {
 }
 
 .barra-lateral {
-    width: 250px;
+    width: 15.625em;
     overflow: hidden;
-    padding: 20px 15px;
+    padding: 1.25em 0.938em;
     background-color: #ede7e3;
     transition: width 0.5s ease, left 0.5s ease;
     z-index: 50;
 }
 
 .profile-container .barra-reducida {
-    width: 80px;
+    width: 5em;
 }
 
 .barra-lateral .panel {
     width: 100%;
-    height: 45px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    height: 2.813em;
+    margin-top: 1.25em;
+    margin-bottom: 2.5em;
     display: flex;
     align-items: center;
 }
 
 .barra-lateral ion-icon {
-    min-width: 80px;
-    font-size: 40px;
+    min-width: 5em;
+    font-size: 2.5em;
     cursor: pointer;
 }
 
 .barra-lateral .panel span {
-    margin-left: 5px;
-    font-size: 20px;
+    margin-left: 0.313em;
+    font-size: 1.25em;
     color: #0077b6;
     font-weight: bold;
 }
 
 .barra-lateral span {
-    font-size: 18px;
+    font-size: 1.125em;
     text-align: left;
     white-space: nowrap;
     opacity: 1;
@@ -82,7 +64,7 @@ body {
     margin-left: 0;
     list-style: none;
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 0.313em;
 }
 
 .barra-lateral .navegacion ul {
@@ -91,13 +73,13 @@ body {
 
 .barra-lateral .navegacion a {
     width: 100%;
-    height: 45px;
+    height: 2.813em;
     display: flex;
     align-items: center;
     text-decoration: none;
-    border-radius: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
+    border-radius: 0.625em;
+    padding-right: 0.313em;
+    padding-left: 0.313em;
     background-color: #ede7e3;
     color: black;
 }
@@ -107,8 +89,8 @@ body {
 }
 
 .barra-lateral .navegacion ion-icon {
-    min-width: 50px;
-    font-size: 20px;
+    min-width: 3.125em;
+    font-size: 1.25em;
 }
 
 #editarInformacion {
@@ -167,24 +149,35 @@ button {
     margin: 1.25em;
 }
 
+
+.botonesMovimiento {
+    justify-content: space-between;
+    min-width: 5em;
+    text-decoration: none;
+    font-size: 2.5em;
+    display: none;
+    cursor: pointer;
+}
+
+.botonesMovimiento a {
+    color: black;
+    text-decoration: none;
+}
+
+.botonesMovimiento a:hover {
+    color: #f4a261;
+}
+
 /* Reglas de medios para dispositivos móviles */
 @media only screen and (max-width: 600px) {
     .profile-container .barra-lateral {
         position:absolute;
         height: 100%;
-        left: -300px;
+        left: -25px;
     }
 
-    .profile-container .barra-lateral.max-barra-lateral {
-        left: 0;
-    }
-
-    .menu {
-        display: initial;
-    }
-
-    .menu ion-icon:nth-child(2) {
-        display: none;
+    .botonesMovimiento {
+        display: flex;
     }
 
     .main-content h2 {
