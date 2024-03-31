@@ -71,7 +71,6 @@ html,body {
 
 .calendar {
     min-width: 100%;
-    height: 200px;
     border: 1px solid #000000;
     background-color: #F37E0D;
     display: flex;

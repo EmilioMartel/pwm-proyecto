@@ -35,7 +35,7 @@ header {
     font-weight: bold;
 }
 
-nav {
+nav.menu-navegacion {
     display: flex;
     flex-grow: 1;
     white-space: nowrap;
