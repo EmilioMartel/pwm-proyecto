@@ -116,3 +116,10 @@ body{
     cursor: pointer; 
 }
 
+.link {
+    color: rgb(0, 42, 255); 
+    font-size: 1em; 
+    text-decoration: underline; 
+    cursor: pointer; 
+}
+
