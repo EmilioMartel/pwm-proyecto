@@ -95,7 +95,7 @@ nav a {
         display: initial;
     }
 
-    nav {
+    nav.menu-navegacion {
         position: absolute;
         top: 100%;
         left: 0;
