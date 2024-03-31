@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../shared/header/headerSinLogin.css" />
     <link rel="stylesheet" href="../../shared/footer/footer.css" />
     <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="../../font.css">
+    <link rel="stylesheet" href="../../font.css" />
     <script src="../../xlu-include-file.js"></script>
     <title>Login</title>
   </head>
@@ -27,35 +27,51 @@
           id="login-section"
         />
 
-        <form class="form">
+        <form
+          class="form"
+          action="../../time-minder/diary/diary.html"
+          method="GET"
+          id="loginForm"
+        >
           <div class="form_container">
-              <div class="form_group">
-                  <input type="text" id="mail" class="form_input" placeholder=" ">
-                  <label for="mail" class="form_label">Correo:</label>
-                  <span class="form_line"></span>
-              </div>
-              <div class="form_group">
-                  <input type="password" id="password" class="form_input" placeholder=" ">
-                  <label for="password" class="form_label">Contraseña:</label>
-                  <span class="form_line"></span>
-              </div>
+            <div class="form_group">
+              <input
+                type="email"
+                id="mail"
+                class="form_input"
+                placeholder=" "
+                required
+                pattern="^[^\s@]+@[^\s@]+.[^\s@]+$"
+              />
+              <label for="mail" class="form_label">Correo:</label>
+              <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+              <input
+                type="password"
+                id="password"
+                class="form_input"
+                placeholder=" "
+                required
+                minlength="6"
+              />
+              <label for="password" class="form_label">Contraseña:</label>
+              <span class="form_line"></span>
+            </div>
           </div>
-      </form>
-
-        <p>
-          <a href="#" aria-labelledby="olvide-contrasena">¿Olvidé mi contraseña?</a>
-        </p>
-
-        <button class="boton" onclick="window.location.href='../../time-minder/diary/diary.html'">Iniciar sesión</button>
+          <button type="submit" id="botonForm" class="boton">
+            Iniciar sesión
+          </button>
+        </form>
       </div>
     </main>
 
     <footer id="main_footer" xlu-include-file="../../shared/footer/footer.html">
       <!--<h1>This is the footer of the website</h1>-->
     </footer>
-
-    <script>
-      xLuIncludeFile();
-    </script>
   </body>
 </html>
+
+<script>
+  xLuIncludeFile();
+</script>
