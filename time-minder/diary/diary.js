@@ -85,19 +85,7 @@ function writeMonth(month) {
 
 
 
-async function getEventsByUser(id, fecha) {
-    const eventResponse = await fetch('http://localhost:3000/events');
-    const data = await eventResponse.json();
-    
-    let events = [];
-    data.forEach(event => {
-        if (event.userId == id && event.date == fecha) {
-            events.push(event);
-        }
-    });
 
-    return events;
-}
 
 function getCurrentDate() {
     const fechaActual = new Date();
@@ -105,7 +93,7 @@ function getCurrentDate() {
     const month = (fechaActual.getMonth() + 1).toString();
     const year = fechaActual.getFullYear();
 
-    const formattedDate = `${day}-${month}-${year}`;
+    const formattedDate = `${day}/${month}/${year}`;
     return formattedDate;
 
 }
@@ -113,7 +101,7 @@ function getCurrentDate() {
 
 // Función para abrir el modal con eventos del día
 async function abrirModal(fecha) {
-    const events = await getEventsByUser("user-1",fecha);
+    const {events} = await getEventsByUser("user-1",fecha);
 
     eventModal(events);
 }
@@ -340,4 +328,105 @@ function eventModal(eventosDelDia) {
     // Agregar el modal al cuerpo del documento
     body.appendChild(modalContainer);
 }
+
+async function getEventsByUser(id, fechaInicio, fechaFin) {
+    const eventResponse = await fetch('http://localhost:3000/events');
+    const data = await eventResponse.json();
+    
+    let events = [];
+    let nextEvents = [];
+
+    const today = new Date();
+    const todayFormatted = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+    data.forEach(event => {
+        // Convertir las fechas de los eventos al mismo formato que las fechas proporcionadas
+        const eventDate = parseDate(event.date); // Convertir la fecha del evento al formato correcto
+        const startRangeDate = parseDate(fechaInicio); // Convertir la fecha de inicio al formato correcto
+        const endRangeDate = parseDate(fechaFin); // Convertir la fecha de fin al formato correcto
+
+        // Función para convertir fecha en formato "día/mes/año" a objeto Date
+        function parseDate(dateString) {
+            const [day, month, year] = dateString.split('/');
+            return new Date(`${month}/${day}/${year}`);
+        }
+
+        // Verificar si la fecha del evento está dentro del rango especificado
+        if (event.userId === id && eventDate >= startRangeDate && eventDate <= endRangeDate) {
+            nextEvents.push(event);
+        }
+
+        // Verificar si el evento es de hoy
+        if (event.userId === id && event.date === todayFormatted) {
+            events.push(event);
+        }
+    });
+
+    return { events, nextEvents };
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para cargar los próximos eventos del usuario para una fecha específica
+    async function loadNextEventsByUser(id, fechaInicio, fechaFin) {
+        try {
+            const { nextEvents } = await getEventsByUser(id, fechaInicio, fechaFin);
+            const nextEventsDiv = document.getElementById('nextEvents');
+
+            // Limpiar el contenido anterior
+            nextEventsDiv.innerHTML = '';
+            nextEventsDiv.style.display = 'flex';
+            nextEventsDiv.style.flexDirection = 'column';
+            nextEventsDiv.style.justifyContent = 'center';
+            nextEventsDiv.style.alignItems = 'center';
+            nextEventsDiv.style.textAlign = 'center';
+
+
+            if (nextEvents.length > 0) {
+                // Crear una lista de eventos
+                const title = document.createElement('h3');
+                title.textContent = "Próximos eventos";
+                nextEventsDiv.appendChild(title);
+                const eventsList = document.createElement('ul');
+                nextEvents.forEach(event => {
+                    const eventItem = document.createElement('li');
+                    eventItem.textContent = event.name + " - " + event.date; // Suponiendo que cada evento tiene una propiedad "name"
+                    eventsList.appendChild(eventItem);
+                });
+                nextEventsDiv.appendChild(eventsList);
+            } else {
+                // Si no hay eventos, mostrar un mensaje
+                const noEventsMessage = document.createElement('p');
+                noEventsMessage.textContent = 'No hay eventos próximos para esta semana.';
+                nextEventsDiv.appendChild(noEventsMessage);
+            }
+        } catch (error) {
+            console.error('Error al obtener los próximos eventos del usuario:', error);
+        }
+    }    
+
+    // Función para mostrar u ocultar los próximos eventos dependiendo del tamaño de la pantalla
+    function toggleNextEvents() {
+        const nextEventsDiv = document.getElementById('nextEvents');
+        if (window.innerWidth <= 768) {
+            // Mostrar nextEvents y cargar los próximos eventos del usuario
+            nextEventsDiv.style.display = 'block';
+            const userId = "user-1";
+            const fechaActual = new Date();
+            const fechaProximaSemana = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000);
+            const dayNextWeek = fechaProximaSemana.getDate();
+            const monthNextWeek = fechaProximaSemana.getMonth() + 1;
+            const yearNextWeek = fechaProximaSemana.getFullYear();
+            const formattedNextWeekDate = `${dayNextWeek}/${monthNextWeek}/${yearNextWeek}`;
+            loadNextEventsByUser(userId, getCurrentDate(), formattedNextWeekDate);
+        } else {
+            // Ocultar nextEvents si la pantalla es mayor que 768px
+            nextEventsDiv.style.display = 'none';
+        }
+    }
+
+    // Llamar a toggleNextEvents() cuando se cargue la página y cuando se redimensione la ventana
+    toggleNextEvents();
+    window.addEventListener('resize', toggleNextEvents);
+});
 

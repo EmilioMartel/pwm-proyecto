@@ -109,6 +109,32 @@
             "categories": "ocio",
             "addFriends": [],
             "notes": "Notes ..."
+        },
+        {
+            "id": "event-4",
+            "userId": "user-1",
+            "name": "evento 4",
+            "date": "31/3/2024",
+            "start": "12:30",
+            "end": "17:45",
+            "ubication": "Las Palmas",
+            "priority": "media",
+            "categories": "ocio",
+            "addFriends": [],
+            "notes": "Notes ..."
+        },
+        {
+            "id": "event-5",
+            "userId": "user-1",
+            "name": "evento 5",
+            "date": "1/4/2024",
+            "start": "12:30",
+            "end": "17:45",
+            "ubication": "Las Palmas",
+            "priority": "media",
+            "categories": "ocio",
+            "addFriends": [],
+            "notes": "Notes ..."
         }
     ],
     "resources": [
