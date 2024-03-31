@@ -23,6 +23,7 @@ aside {
 
 main {
     width: 100%;
+    min-height: 80vh;
     background-color: ghostwhite;
     display: flex;
 }
@@ -105,4 +106,37 @@ footer {
 
 .btn-zone {
     margin-top: 20px;
+}
+
+.toggle-aside-btn {
+    display: none;
+}
+
+#toggleAsideBtn{
+    height: 45px;
+    width: 100%;
+    background-color: gainsboro;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        display: none;
+    }
+
+    .toggle-aside-btn {
+        display: block;
+    }
+    
+
+    section {
+        min-width: 100%;
+        min-height: 100vh;
+    }
+
+    .mobile {
+        position: fixed;
+        z-index: 1000;
+        min-width: 150px;
+        background-color: gainsboro;
+    }
 }
