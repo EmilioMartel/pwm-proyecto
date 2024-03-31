@@ -112,25 +112,6 @@ main {
 
 }
 
-.menu {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    right: 15px;
-    top: 100px;
-    background-color: #0077b6;
-    color: white;
-    z-index: 100;
-
-}
-
 .palette-containerDefault,
 .palette-container1,
 .palette-container2,
@@ -243,6 +224,26 @@ h2 {
     width: 100%;
 }
 
+.botonesMovimiento {
+    min-width: 80px;
+    text-decoration: none;
+    font-size: 40px;
+    display: none;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.botonesMovimiento a {
+    color: black;
+    text-decoration: none;
+}
+
+.botonesMovimiento a:hover {
+    color: #f4a261;
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .profile-container .barra-lateral {
@@ -272,16 +273,8 @@ h2 {
         left: -400px;
     }
 
-    .profile-container .barra-lateral.max-barra-lateral {
-        left: 0;
-    }
-
-    .menu {
-        display: initial;
-    }
-
-    .menu ion-icon:nth-child(2) {
-        display: none;
+    .botonesMovimiento {
+        display: flex;
     }
 
     h2 {
