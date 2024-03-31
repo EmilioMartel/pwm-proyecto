@@ -41,11 +41,10 @@
                 class="form_input"
                 placeholder=" "
                 required
-                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                pattern="^[^\s@]+@[^\s@]+.[^\s@]+$"
               />
               <label for="mail" class="form_label">Correo:</label>
               <span class="form_line"></span>
-              <div class="error-message" id="emailError"></div>
             </div>
             <div class="form_group">
               <input
@@ -60,7 +59,9 @@
               <span class="form_line"></span>
             </div>
           </div>
-          <button type="submit" class="boton">Iniciar sesión</button>
+          <button type="submit" id="botonForm" class="boton">
+            Iniciar sesión
+          </button>
         </form>
       </div>
     </main>
@@ -68,9 +69,9 @@
     <footer id="main_footer" xlu-include-file="../../shared/footer/footer.html">
       <!--<h1>This is the footer of the website</h1>-->
     </footer>
-
-    <script>
-      xLuIncludeFile();
-    </script>
   </body>
 </html>
+
+<script>
+  xLuIncludeFile();
+</script>

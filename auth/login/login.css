@@ -110,6 +110,10 @@ main {
     color: #3866f2;
 }
 
+.form .boton {
+    display: flex;
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .login-section img {
