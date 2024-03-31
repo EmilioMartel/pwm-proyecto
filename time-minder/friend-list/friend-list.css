@@ -11,8 +11,8 @@
     justify-content: left;
     background-color: #fff;
     width: 80%;
-    max-width: 275px;
-    padding: 30px 40px;
+    max-width: 17em;
+    padding: 2em 2.5em;
     overflow: hidden;
 }
 
@@ -28,14 +28,14 @@ span.diana {
 .diana + a {
     display: block;
     float: left;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 0.625em;
+    border: 0.063em solid #ddd;
     background-color: #eee;
-    margin-bottom: -1px;
-    border-radius: 8px 8px 0 0;
-    margin-right: 10px;
+    margin-bottom: -0.063em;
+    border-radius: 0.5em 0.5em 0 0;
+    margin-right: 0.625em;
     text-decoration:none;
 }
   
@@ -46,7 +46,7 @@ span.diana {
   
 #pnl_1, #pnl_2{
     position: absolute;
-    top: 31px;
+    top: 2em;
     left: 0;
     border: none;
     clear: both;
@@ -56,12 +56,12 @@ span.diana {
 #pnl_1 > div, #pnl_2 > div {
     opacity: 0;
     transition: all 0.1s ease;
-    padding: 30px;
+    padding: 1.875em;
 }
   
 #uno:target ~ #pnl_1, #dos:target ~ #pnl_2{
     position: static;
-    border: 1px solid #ddd;
+    border: 0.063em solid #ddd;
 }
   
 #uno:target ~ #pnl_1 > div, #dos:target ~ #pnl_2 > div{
@@ -81,9 +81,9 @@ span.diana {
     max-width: 25%;
     column-gap: 1%; 
     margin: 1%;
-    padding: 4px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    max-height: 400px;
+    padding: 0.25em;
+    box-shadow: 0.125em 0.125em 0.188em rgba(0, 0, 0, 0.2);
+    max-height: 25em;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -97,16 +97,16 @@ span.diana {
     display: flex;
     align-items: center;
     background-color: #f0f0f0;
-    border-radius: 20px;
-    padding: 5px;
-  }
+    border-radius: 1.25em;
+    padding: 0.313em;
+}
   
 .search-input {
     border: none;
     background-color: transparent;
-    padding: 5px 10px;
-    margin-right: 5px;
-    font-size: 16px;
+    padding: 0.313em 0.625em;
+    margin-right: 0.313em;
+    font-size: 1em;
     outline: none; /* Remove the outline */
     flex-grow: 1; /* Ensure the input takes up the available space */
 }
@@ -115,7 +115,7 @@ span.diana {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 0.313em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,17 +133,17 @@ span.diana {
 }
 
 .result-list::-webkit-scrollbar{
-    width: 8px;
+    width: 0.5em;
 }
 
 .result-list::-webkit-scrollbar-track {
     background: #f1f1f1; 
-    border-radius: 6px;
+    border-radius: 0.375em;
 }
   
 .result-list::-webkit-scrollbar-thumb {
     background: #888; 
-    border-radius: 6px; 
+    border-radius: 0.375em; 
 }
   
 .result-list::-webkit-scrollbar-thumb:hover {
@@ -151,17 +151,17 @@ span.diana {
 }
 
 .friend-list::-webkit-scrollbar{
-    width: 8px;
+    width: 0.5em;
 }
 
 .friend-list::-webkit-scrollbar-track {
     background: #f1f1f1; 
-    border-radius: 6px;
+    border-radius: 0.375em;
 }
   
 .friend-list::-webkit-scrollbar-thumb {
     background: #888; 
-    border-radius: 6px; 
+    border-radius: 0.375em; 
 }
   
 .friend-list::-webkit-scrollbar-thumb:hover {
@@ -170,9 +170,35 @@ span.diana {
 
 .result-list{
     flex-grow: 1;
-    max-height: 400px;
+    max-height: 25em;
     overflow-y: auto;
-    margin: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.313em;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
 }
 
+@media only screen and (max-width: 600px) {
+    .container-page-friends{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0em;
+        margin-bottom: 3em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .friends-managment{
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-search{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-search{
+        margin: 0em;
+    }
+}

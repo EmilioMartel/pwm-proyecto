@@ -19,3 +19,12 @@
   .btn-get-started a {
     text-decoration: none;
   }
+
+@media only screen and (max-width: 1024px){
+  .btn-get-started {
+    border-radius: 18px;
+    padding: 11px 22px; 
+    cursor: pointer;
+    margin: 15px 0;
+  }
+}

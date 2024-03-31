@@ -6,3 +6,14 @@
     margin-top: 6em;
     margin-bottom: 6em;
 }
+
+@media only screen and (max-width: 780px) {
+    /* Tus estilos para móviles aquí */
+    .cards-container{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3em;
+        margin-bottom: 3em;
+        row-gap: 2em;
+    }
+}
