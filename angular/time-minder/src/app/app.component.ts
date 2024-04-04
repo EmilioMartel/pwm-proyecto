@@ -11,4 +11,5 @@ import { InputComponent } from './shared/input/input.component';
 })
 export class AppComponent {
   title = 'time-minder';
+  contenido = "Nombre ";
 }
