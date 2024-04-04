@@ -11,4 +11,10 @@ import { Input } from '@angular/core';
 })
 export class InputComponent {
   @Input() contenido: string = "Valor por defecto";
+  @Input() type: string = "text";
+  @Input() id: string = "identificafor";
+  @Input() name: string = "nombre";
+  @Input() class: string = "clase";
+  @Input() placeholder: string = " ";
+  @Input() pattern: string = " ";
 }
