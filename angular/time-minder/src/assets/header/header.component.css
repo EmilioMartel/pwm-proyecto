@@ -84,6 +84,12 @@ nav a:hover {
 
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   #logo {
       display: none;
   }
@@ -91,6 +97,11 @@ nav a:hover {
 
 /* Reglas de medios para dispositivos móviles */
 @media only screen and (max-width: 600px) {
+  header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   #logo {
       display: none;
   }
@@ -104,10 +115,8 @@ nav a:hover {
       top: 100%;
       left: 0;
       right: 0;
-      background-color: #ede7e3;
       display: none;
       font-size: small;
-      padding-bottom: 10px;
       text-align: center;
       z-index: 1;
   }

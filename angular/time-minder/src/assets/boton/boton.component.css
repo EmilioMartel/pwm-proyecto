@@ -25,3 +25,10 @@
 .botones-derecha {
   text-align: center;
 }
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .boton {
+    margin-left: 0px;
+  }
+}
