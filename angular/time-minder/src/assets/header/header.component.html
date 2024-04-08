@@ -1,37 +1,27 @@
-<img
-  src="../../assets/imagenes/logo-Dk9oukKRc-transformed.png"
-  alt="Logo"
-  id="logo"
-/>
-<span class="logo-text">TIMEMINDER</span>
-<input type="checkbox" id="menu-icono" />
-<label for="menu-icono">
-  <img src="../../assets/images/menu-mobile.png" class="menu-icono" alt="" />
-</label>
-<nav>
-  <a href="../../index.html">Inicio</a>
-  <a href="../../shared/plan/plan.html">Planes</a>
-  <div class="idiomas">
-    <span>Idiomas</span>
-    <i class="bi bi-translate" id="idiomas"></i>
-    <ul>
-      <li><a href="#">Español</a></li>
-      <li><a href="#">Inglés</a></li>
-    </ul>
-  </div>
-</nav>
+<header>
+  <img
+    src="../../assets/imagenes/logo-Dk9oukKRc-transformed.png"
+    alt="Logo"
+    id="logo"
+  />
+  <span class="logo-text">TIMEMINDER</span>
+  <input type="checkbox" id="menu-icono" />
+  <label for="menu-icono">
+    <img src="../../assets/images/menu-mobile.png" class="menu-icono" alt="" />
+  </label>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Planes</a>
+    <div class="idiomas">
+      <span>Idiomas</span>
+      <i class="bi bi-translate" id="idiomas"></i>
+      <ul>
+        <li><a href="#">Español</a></li>
+        <li><a href="#">Inglés</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="botones-derecha">
-  <button
-    class="boton"
-    onclick="window.location.href='../../auth/login/login.html'"
-  >
-    Iniciar sesión
-  </button>
-  <button
-    class="boton"
-    onclick="window.location.href='../../auth/sign-in/sign-in.html'"
-  >
-    Registrarse
-  </button>
-</div>
+  <app-boton title="Iniciar Sesión" href="#" ></app-boton>
+  <app-boton title="Registrarse" href="#" customClass="botonR"></app-boton>
+</header>
