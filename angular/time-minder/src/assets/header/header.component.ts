@@ -10,5 +10,9 @@ import { BotonComponent } from "../boton/boton.component";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  datobotonIS = "Iniciar Sesión"
+  hrefbotonIS = "#"
+  customclassboton = "botonR"
+  datobotonR = "Registrarse"
+  hrefbotonR = "#"
 }

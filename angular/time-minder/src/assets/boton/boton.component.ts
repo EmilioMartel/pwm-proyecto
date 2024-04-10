@@ -9,6 +9,13 @@ import { Component, Input } from '@angular/core';
 })
 export class BotonComponent {
   @Input() title: string = '';
-  @Input() href: string = '';
+  @Input() redirectToUrl: string = '';
   @Input() customClass: string = '';
+
+  redirectTo(): void {
+    window.location.href = this.redirectToUrl;
+  }
+
 }
+
+

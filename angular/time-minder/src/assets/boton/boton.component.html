@@ -1,3 +1,5 @@
 <div class="botones-derecha">
-  <a class="boton {{ customClass }}" [href]="href">{{ title }}</a>
+  <button class="boton {{ customClass }}" (click)="redirectTo()">
+    {{ title }}
+  </button>
 </div>
