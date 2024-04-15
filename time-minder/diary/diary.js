@@ -5,6 +5,7 @@ let currentDay = currentDate.getDate();
 let monthNumber = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 
+
 let dates = document.getElementById('dates');
 let month = document.getElementById('month');
 let year = document.getElementById('year');
@@ -27,19 +28,20 @@ var auxCurrentDate = {
     year: aux.getFullYear()
 }
 var acd;
-var groupMode = false;
+
 /** CALENDARIO */
 
 function writeMonth(month) {
     let html = '';
 
     function getFormattedDate(day, month, year) {
-        return `${parseInt(day)}-${parseInt(month)}-${parseInt(year)}`;
+        
+        return `${parseInt(day)}/${parseInt(month)}/${parseInt(year)}`;
     }
     
 
-    function createDayElement(day, className = '') {
-        return `<div id="day${getFormattedDate(day)}" class="calendar__item ${className}" onclick="abrirModal('${getFormattedDate(day)}')">
+    function createDayElement(day, month, year, className = '') {
+        return `<div id="day${getFormattedDate(day, month, year)}" class="calendar__item ${className}" onclick="abrirModal('${getFormattedDate(day, month, year)}')">
                     <div class="day d-flex justify-content-center">
                         ${day}
                     </div>
@@ -47,39 +49,33 @@ function writeMonth(month) {
     }
 
 
-    function createLastDaysElement(day) {
-        return createDayElement(day, 'calendar__last-days');
+    function createLastDaysElement(day, nextMonth, nextYear) {
+        return createDayElement(day, nextMonth, nextYear, 'calendar__last-days');
     }
 
     // Días del mes pasado visibles en el mes actual
     for (let i = startDay(); i > 0; i--) {
         const lastMonthDay = (monthNumber === 0) ? getTotalDays(11) - (i - 1) : getTotalDays(monthNumber - 1) - (i - 1);
-        const acd = getFormattedDate(lastMonthDay, (monthNumber === 0) ? 12 : monthNumber, (monthNumber === 0) ? currentYear - 1 : currentYear);
 
-        html += createLastDaysElement(acd);
+        html += createLastDaysElement(lastMonthDay, (monthNumber === 0) ? 12 : monthNumber, (monthNumber === 0) ? currentYear - 1 : currentYear);
     }
 
     // Días del mes actual
     for (let i = 1; i <= getTotalDays(month); i++) {
-        html += `<div class="divTxtDayEvent calendar__item">${createDayElement(i)}</div>`;
+        html += `<div class="divTxtDayEvent calendar__item">${createDayElement(i,(monthNumber === 0) ? 1 : monthNumber+1,currentYear)}</div>`;
     }
 
 
-    // Días del próximo mes en el mes actual
+   // Días del próximo mes en el mes actual
     let j = 1;
+    const nextMonthNumber = (monthNumber + 1) % 12; // Calcular el número del próximo mes (manejando el caso de diciembre)
+    const nextYear = currentYear + Math.floor((monthNumber + 1) / 12); // Calcular el año del próximo mes
+
     for (let i = lastDay(); i < 6; i++) {
-        const day = (j < 10) ? "0" + j : j;
-        let postMonth = (monthNumber + 2 < 10) ? "0" + (monthNumber + 2) : monthNumber + 2;
-        let year = currentYear;
+        const day = j;
+        const nextMonth = nextMonthNumber + 1;
 
-        if (postMonth > 12) {
-            year++;
-            postMonth = "01";
-        }
-
-        const acd = getFormattedDate(day, postMonth, year);
-
-        html += createLastDaysElement(acd);
+        html += createLastDaysElement(day, nextMonth, nextYear);
         j++;
     }
 
@@ -87,24 +83,25 @@ function writeMonth(month) {
     dates.innerHTML = html;
 }
 
-
-// Función para abrir el modal con eventos del día
-function abrirModal(fecha) {
-    // Obtener la fecha actual
+function getCurrentDate() {
     const fechaActual = new Date();
+    const day = fechaActual.getDate();
+    const month = (fechaActual.getMonth() + 1);
+    const year = fechaActual.getFullYear();
 
-    // Formatear la fecha en el formato esperado (por ejemplo, "YYYY-MM-DD")
-    const formattedDate = `${fechaActual.getFullYear()}-${(fechaActual.getMonth() + 1).toString().padStart(2, '0')}-${fechaActual.getDate().toString().padStart(2, '0')}`;
+    const formattedDate = `${day}/${month}/${year}`;
+    return formattedDate;
 
-    // Generar algunos eventos de ejemplo
-    const eventosDelDia = [
-        `Evento 1 el ${formattedDate}`,
-        `Evento 2 el ${formattedDate}`,
-        // Agrega más eventos según sea necesario
-    ];
-    eventModal(eventosDelDia);
 }
 
+
+// Función para abrir el modal con eventos del día
+async function abrirModal(fecha) {
+    console.log(fecha)
+    const {events, nextEvents} = await getEventsByUser("user-1",fecha,fecha);
+
+    eventModal(events);
+}
 
 const getTotalDays = month => {
     if(month === -1) month = 11;
@@ -163,7 +160,7 @@ const setNewDate = () => {
     writeMonth(monthNumber);
 }
 
-writeMonth(monthNumber);
+setNewDate(monthNumber);
 
 const createEventButton = document.getElementById("showModal");
 createEventButton.addEventListener("click", () => showModal());
@@ -195,6 +192,7 @@ const showModal = () => {
                     ${crearInput('Hora de finalización', true)}
                     ${crearInput('Ubicación')}
                     ${crearSelect('Prioridad', ['Alta', 'Media', 'Baja'])}
+                    ${crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio', 'Salud'])}
                     ${crearSelect('Categoría', ['Deportes', 'Educación', 'Trabajo', 'Ocio', 'Salud'])}
                     <textarea name="notas" placeholder="Notas..." rows="4"></textarea>
                     <div style="display: flex;">
@@ -271,7 +269,7 @@ function eventModal(eventosDelDia) {
     modalContainer.id = 'miModal';
     modalContainer.className = 'modal';
 
-    // Configura el estilo del modalContainer
+    // Configurar el estilo del modalContainer
     modalContainer.style.display = 'flex';
     modalContainer.style.flexDirection = 'column';
     modalContainer.style.alignItems = 'center';
@@ -289,18 +287,27 @@ function eventModal(eventosDelDia) {
     modalContent.style.padding = '20px';
     modalContent.style.color = '#fff';
 
-    // Crear un elemento de lista ul para los eventos
-    const listaEventos = document.createElement('ul');
+    eventosDelDia.forEach(event => {
 
-    // Iterar sobre los eventos del día y crear elementos li para cada evento
-    eventosDelDia.forEach(evento => {
-        const itemEvento = document.createElement('li');
-        itemEvento.textContent = evento;
-        listaEventos.appendChild(itemEvento);
+        console.log(event)
+
+        const listaDatosEvento = document.createElement('ul');
+
+        // Iterar sobre las propiedades del evento y crear elementos li para cada una
+        Object.entries(event).forEach(([key, value]) => {
+            const itemDatoEvento = document.createElement('li');
+            itemDatoEvento.textContent = `${key}: ${value}`;
+
+            // Agregar clases CSS para los elementos li
+            itemDatoEvento.classList.add('evento-info'); // Clase para el li
+            itemDatoEvento.classList.add('evento-info-item'); // Clase para los elementos li dentro de la lista de datos
+
+            listaDatosEvento.appendChild(itemDatoEvento);
+        });
+
+        // Agregar la lista de eventos al contenido del modal
+        modalContent.appendChild(listaDatosEvento);
     });
-
-    // Agregar la lista de eventos al contenido del modal
-    modalContent.appendChild(listaEventos);
 
     // Crear el botón "Cerrar" y agregar un manejador de eventos
     const cerrarModalBtn = document.createElement('button');
@@ -319,3 +326,105 @@ function eventModal(eventosDelDia) {
     // Agregar el modal al cuerpo del documento
     body.appendChild(modalContainer);
 }
+
+async function getEventsByUser(id, fechaInicio, fechaFin) {
+    const eventResponse = await fetch('http://localhost:3000/events');
+    const data = await eventResponse.json();
+    
+    let events = [];
+    let nextEvents = [];
+
+    const today = new Date();
+    const todayFormatted = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+    data.forEach(event => {
+
+        // Convertir las fechas de los eventos al mismo formato que las fechas proporcionadas
+        const eventDate = parseDate(event.date); // Convertir la fecha del evento al formato correcto
+        const startRangeDate = parseDate(fechaInicio); // Convertir la fecha de inicio al formato correcto
+        const endRangeDate = parseDate(fechaFin); // Convertir la fecha de fin al formato correcto
+
+        function parseDate(dateString) {
+            const [day, month, year] = dateString.split('/');
+            return new Date(`${month}/${day}/${year}`);
+        }
+
+        // Verificar si la fecha del evento está dentro del rango especificado
+        if (event.userId === id && eventDate >= startRangeDate && eventDate <= endRangeDate) {
+            nextEvents.push(event);
+        }
+
+        // Verificar si el evento es de hoy        
+        if (event.userId === id && event.date === fechaInicio) {
+            events.push(event);
+        }
+    });
+
+    return { events, nextEvents };
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para cargar los próximos eventos del usuario para una fecha específica
+    async function loadNextEventsByUser(id, fechaInicio, fechaFin) {
+        try {
+            const { nextEvents } = await getEventsByUser(id, fechaInicio, fechaFin);
+            const nextEventsDiv = document.getElementById('nextEvents');
+
+            // Limpiar el contenido anterior
+            nextEventsDiv.innerHTML = '';
+            nextEventsDiv.style.display = 'flex';
+            nextEventsDiv.style.flexDirection = 'column';
+            nextEventsDiv.style.justifyContent = 'center';
+            nextEventsDiv.style.alignItems = 'center';
+            nextEventsDiv.style.textAlign = 'center';
+
+
+            if (nextEvents.length > 0) {
+                // Crear una lista de eventos
+                const title = document.createElement('h3');
+                title.textContent = "Próximos eventos";
+                nextEventsDiv.appendChild(title);
+                const eventsList = document.createElement('ul');
+                nextEvents.forEach(event => {
+                    const eventItem = document.createElement('li');
+                    eventItem.textContent = event.name + " - " + event.date; // Suponiendo que cada evento tiene una propiedad "name"
+                    eventsList.appendChild(eventItem);
+                });
+                nextEventsDiv.appendChild(eventsList);
+            } else {
+                // Si no hay eventos, mostrar un mensaje
+                const noEventsMessage = document.createElement('p');
+                noEventsMessage.textContent = 'No hay eventos próximos para esta semana.';
+                nextEventsDiv.appendChild(noEventsMessage);
+            }
+        } catch (error) {
+            console.error('Error al obtener los próximos eventos del usuario:', error);
+        }
+    }    
+
+    // Función para mostrar u ocultar los próximos eventos dependiendo del tamaño de la pantalla
+    function toggleNextEvents() {
+        const nextEventsDiv = document.getElementById('nextEvents');
+        if (window.innerWidth <= 768) {
+            // Mostrar nextEvents y cargar los próximos eventos del usuario
+            nextEventsDiv.style.display = 'block';
+            const userId = "user-1";
+            const fechaActual = new Date();
+            const fechaProximaSemana = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000);
+            const dayNextWeek = fechaProximaSemana.getDate();
+            const monthNextWeek = fechaProximaSemana.getMonth() + 1;
+            const yearNextWeek = fechaProximaSemana.getFullYear();
+            const formattedNextWeekDate = `${dayNextWeek}/${monthNextWeek}/${yearNextWeek}`;
+            loadNextEventsByUser(userId, getCurrentDate(), formattedNextWeekDate);
+        } else {
+            // Ocultar nextEvents si la pantalla es mayor que 768px
+            nextEventsDiv.style.display = 'none';
+        }
+    }
+
+    // Llamar a toggleNextEvents() cuando se cargue la página y cuando se redimensione la ventana
+    toggleNextEvents();
+    window.addEventListener('resize', toggleNextEvents);
+});
+

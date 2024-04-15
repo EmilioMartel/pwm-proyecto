@@ -16,28 +16,31 @@
 <body>
     <header id="main_header" xlu-include-file="../../shared/header/headerConLogin.html">
     </header>
-    <div id="divCalendario" class="d-flex">
-        <nav class="calendar">
-            <section class="calendar__info">
-                <button class="calendar__prev" id="prev-month">&#9664;</button>
-                <div class="calendar__month" id="month"></div>
-                <div class="calendar__year" id="year"></div>
-                <button class="calendar__next" id="next-month">&#9654;</button>
-            </section>
-            <section class="calendar__week">
-                <div class="calendar__day c-white">Lun</div>
-                <div class="calendar__day c-white">Mar</div>
-                <div class="calendar__day c-white">Mier</div>
-                <div class="calendar__day c-white">Jue</div>
-                <div class="calendar__day c-white">Vie</div>
-                <div class="calendar__day c-white">Sáb</div>
-                <div class="calendar__day c-white">Dom</div>
-            </section>
-        </nav>
-    </div> 
+    
+    <nav class="calendar">
+        <section class="calendar__info">
+            <button class="calendar__prev" id="prev-month">&#9664;</button>
+            <div class="calendar__month" id="month"></div>
+            <div class="calendar__year" id="year"></div>
+            <button class="calendar__next" id="next-month">&#9654;</button>
+        </section>
+        <section class="calendar__week">
+            <div class="calendar__day c-white">Lun</div>
+            <div class="calendar__day c-white">Mar</div>
+            <div class="calendar__day c-white">Mier</div>
+            <div class="calendar__day c-white">Jue</div>
+            <div class="calendar__day c-white">Vie</div>
+            <div class="calendar__day c-white">Sáb</div>
+            <div class="calendar__day c-white">Dom</div>
+        </section>
+    </nav>
+    
     <main id="divMainContent">
         <section id="dates" class="calendar__dates"></section>
     </main>
+
+    <div id="nextEvents"></div>
+    
     <footer id="divFooter">
         <button id="showModal" class="customBtn mb-3">Crear Evento</button>
     </footer>
@@ -48,6 +51,41 @@
     <script src="./diary.js"></script>
     <script>
         xLuIncludeFile();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+          // Buscar el span con el ID 'userName'
+          const userNameSpan = document.getElementById("userName");
+
+          try {
+            // Obtener la información del usuario
+            const name = await getInfoUser("user-1");
+
+            // Verificar si se encontró el span
+            if (userNameSpan) {
+              // Modificar el contenido del span
+              userNameSpan.textContent = name;
+            } else {
+              console.error('No se encontró el span con el ID "userName"');
+            }
+          } catch (error) {
+            console.error("Error al obtener la información del usuario:", error);
+          }
+        });
+
+        async function getInfoUser(id) {
+          const eventResponse = await fetch("http://localhost:3000/users");
+          const data = await eventResponse.json();
+
+          let name = "";
+          data.forEach((user) => {
+            if (user.id === id) {
+              name = user.name;
+            }
+          });
+          return name;
+        }
     </script>
     
 </body>

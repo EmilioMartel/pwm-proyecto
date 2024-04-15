@@ -1,0 +1,52 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Sofía",
+            "apellido": "Torres"
+        },
+        {
+            "nombre": "Lucía",
+            "apellido": "González"
+        },
+        {
+            "nombre": "Pedro",
+            "apellido": "López"
+        },
+        {
+            "nombre": "Elena",
+            "apellido": "Fernández"
+        },
+        {
+            "nombre": "Pedro",
+            "apellido": "Pérez"
+        },
+        {
+            "nombre": "Ana",
+            "apellido": "Rodríguez"
+        },
+        {
+            "nombre": "Laura",
+            "apellido": "Rodríguez"
+        },
+        {
+            "nombre": "Sergio",
+            "apellido": "López"
+        },
+        {
+            "nombre": "Ana",
+            "apellido": "García"
+        },
+        {
+            "nombre": "Pablo",
+            "apellido": "Martínez"
+        },
+        {
+            "nombre": "Pablo",
+            "apellido": "López"
+        },
+        {
+            "nombre": "Pedro",
+            "apellido": "García"
+        }
+    ]
+}
