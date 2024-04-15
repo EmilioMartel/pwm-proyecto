@@ -1,0 +1,35 @@
+
+  <header id="main_header">
+  </header>
+
+  <nav class="calendar">
+    <section class="calendar__info">
+      <button class="calendar__prev" (click)="lastMonth()">&#9664;</button>
+      <div class="calendar__month" id="month">{{ monthNames[monthNumber] }}</div>
+      <div class="calendar__year" id="year">{{ currentYear }}</div>
+      <button class="calendar__next" (click)="nextMonth()">&#9654;</button>
+    </section>
+    <section class="calendar__week">
+      <div class="calendar__day c-white">Lun</div>
+      <div class="calendar__day c-white">Mar</div>
+      <div class="calendar__day c-white">Mier</div>
+      <div class="calendar__day c-white">Jue</div>
+      <div class="calendar__day c-white">Vie</div>
+      <div class="calendar__day c-white">Sáb</div>
+      <div class="calendar__day c-white">Dom</div>
+    </section>
+  </nav>
+
+  <main id="divMainContent">
+    <section id="dates" class="calendar__dates">
+      <!-- Aquí se generará dinámicamente el contenido del calendario -->
+    </section>
+  </main>
+
+  <div id="nextEvents">
+    <!-- Contenido de los próximos eventos -->
+  </div>
+
+  <footer id="divFooter">
+    <button id="showModal" class="customBtn mb-3" (click)="showModal()">Crear Evento</button>
+  </footer>
