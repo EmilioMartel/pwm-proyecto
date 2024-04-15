@@ -9,25 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DiaryComponent implements OnInit {
-  monthNames: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-  currentDate: Date = new Date();
-  currentDay: number = this.currentDate.getDate();
+  monthNames  : string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  currentDate : Date = new Date();
+  currentDay  : number = this.currentDate.getDate();
   currentMonth: number = this.currentDate.getMonth()+1;
-  monthNumber: number = this.currentDate.getMonth();
-  currentYear: number = this.currentDate.getFullYear();
-  dates: HTMLElement = document.getElementById('dates')!;
-  month: HTMLElement = document.getElementById('month')!;
-  year: HTMLElement = document.getElementById('year')!;
+  monthNumber : number = this.currentDate.getMonth()+1;
+  currentYear : number = this.currentDate.getFullYear();
 
-  constructor() {
-    console.log('constructor')
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    console.log('ngOnInit')
-    this.month.textContent = this.monthNames[this.monthNumber];
-    this.year.textContent = this.currentYear.toString();
-    this.writeMonth(this.currentMonth, this.monthNumber, this.currentYear, this.startDay, this.getTotalDays, this.lastDay, this.dates);
+    this.writeMonth(this.currentMonth, this.monthNumber, this.currentYear, this.startDay, this.getTotalDays, this.lastDay);
 
   }
 
@@ -69,10 +61,8 @@ export class DiaryComponent implements OnInit {
     return this.createDayElement(day, nextMonth, nextYear, 'calendar__last-days');
   }
 
-  writeMonth(month: number, monthNumber: number, currentYear: number, startDay: () => number, getTotalDays: (month: number) => number, lastDay: () => number, dates: HTMLElement | null): void {
+  writeMonth(month: number, monthNumber: number, currentYear: number, startDay: () => number, getTotalDays: (month: number) => number, lastDay: () => number): void {
     let html = '';
-
-
 
     // Días del mes pasado visibles en el mes actual
     for (let i = startDay(); i > 0; i--) {
@@ -98,10 +88,7 @@ export class DiaryComponent implements OnInit {
       j++;
     }
 
-    // Inserta el HTML en el contenedor
-    if (dates) {
-      dates.innerHTML = html;
-    }
+
   }
 
   getTotalDays(month: number): number {
@@ -133,7 +120,10 @@ export class DiaryComponent implements OnInit {
   }
 
   startDay(): number {
-    let start = new Date(this.currentYear, this.monthNumber, 1);
+    console.log("currentYear", this.currentYear);
+
+    let start = new Date(this.currentYear, this.monthNumber);
+    console.log("startDay: ",start)
     return start.getDay() === 0 ? 6 : start.getDay() - 1;
   }
 
@@ -172,9 +162,6 @@ export class DiaryComponent implements OnInit {
       this.monthNumber,
       this.currentDay
     );
-    // Assuming month and year are class properties
-    this.month.nodeValue = this.monthNames[this.monthNumber];
-    this.year.nodeValue = this.currentYear.toString();
     // Assuming dates is a reference to the HTMLElement for dates
     this.writeMonth(
       this.currentMonth,
@@ -182,8 +169,7 @@ export class DiaryComponent implements OnInit {
       this.currentYear,
       this.startDay,
       this.getTotalDays,
-      this.lastDay,
-      this.dates
+      this.lastDay
     );
   }
 
