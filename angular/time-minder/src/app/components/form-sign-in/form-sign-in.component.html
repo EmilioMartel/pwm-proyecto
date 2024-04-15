@@ -1,0 +1,56 @@
+<form class="form" action="../login/login.html" method="post" id="signinForm">
+  <div class="form_container">
+    <div class="form_group">
+      <app-input
+        [type]="typeNombre"
+        [contenido]="contenidoNombre"
+        [identificador]="identificadorNombre"
+        [pattern]="patternNombre"
+      />
+    </div>
+    <div class="form_group">
+      <app-input
+        [type]="typeApellido"
+        [contenido]="contenidoApellido"
+        [identificador]="typeApellido"
+        [pattern]="typeApellido"
+      />
+    </div>
+
+    <div class="form_group">
+      <app-input
+        [type]="typeMail"
+        [contenido]="contenidoMail"
+        [identificador]="typeMail"
+        [pattern]="typeMail"
+      />
+    </div>
+
+    <div class="form_group">
+      <app-input
+        [type]="typePassword"
+        [contenido]="contenidoPassword"
+        [identificador]="typePassword"
+        [pattern]="typePassword"
+      />
+    </div>
+
+    <div class="form_group">
+      <app-input
+        [type]="typeConfirmPassword"
+        [contenido]="contenidoConfirmPassword"
+        [identificador]="identificadorConfirmPassword"
+        [pattern]="patternConfirmPassword"
+      />
+    </div>
+
+    <div class="form_line_join_group">
+        <input id="TermYCond" type="checkbox" name="TermYCond">
+        <label for="TermYCond"><a href="#" class="link">Terminos y condiciones</a></label>
+    </div>
+
+    <button type="submit" class="form_submit">
+        Registrarse
+    </button>
+  </div>
+</form>
