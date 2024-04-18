@@ -1,6 +1,8 @@
 import { Component, input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormSignInComponent } from './components/form-sign-in/form-sign-in.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @Component({
   selector: 'app-root',

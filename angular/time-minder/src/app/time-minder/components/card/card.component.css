@@ -1,0 +1,17 @@
+.caracteristica {
+  background-color: #f8f8f8;
+  padding: 1.25em;
+  border-radius: 0.625em;
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+  flex: 1;
+
+  max-width: 12.5em;
+  margin: 0.625em;
+}
+
+img {
+    max-width: 5em;
+    border: 0.125em solid #f4a261;
+    height: auto;
+    margin-bottom: 0.625em;
+}
