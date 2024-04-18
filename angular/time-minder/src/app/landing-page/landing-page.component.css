@@ -51,6 +51,15 @@ h1 {
   height: 18.75em;
 }
 
+.caracteristicas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25em;
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   #image-zone {

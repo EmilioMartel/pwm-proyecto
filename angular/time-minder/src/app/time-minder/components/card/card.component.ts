@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() content: string="";
+  @Input() content: string= "";
   @Input() imagen: string = '';
 
 }
