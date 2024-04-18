@@ -60,6 +60,19 @@ h1 {
   padding: 1.25em;
 }
 
+.titulo-seccion {
+  margin-bottom: 1.25em;
+  color: #0077b6;
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 4.375em;
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   #image-zone {
