@@ -1,1 +1,119 @@
-<p>friend-list works!</p>
+
+    <div class="container-page-friends">
+        <div class="friends-managment">
+            <div class="tabs">
+                <span class="diana" id="uno"></span>
+                <a href="#uno" class="tab-e">Amigos</a>
+                <span class="diana" id="dos"></span>
+                <a href="#dos" class="tab-e">Solicitudes Pendientes</a>
+
+                <div id="pnl_1">
+                    <div class="container-friends">
+                        <app-friend-card/>
+                    </div>
+                </div>
+
+                <div id="pnl_2">
+                    <div class="container-friends">
+                      <app-friend-unconfirmed-request/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-search">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="result-list">
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+                <app-friend-request/>
+        </div>
+    </div>
+
+<script>
+
+    fetch('../../dataSignin.json')
+        .then(response => response.json())
+            .then(data => {
+                // Obtener todos los elementos con la clase 'friend'
+                const friendsElements = document.querySelectorAll('.friend');
+
+                // Asegurarse de que hay suficientes usuarios para llenar los elementos
+                for (let i = 0; i < friendsElements.length; i++) {
+                    // Obtén el elemento donde quieres colocar el nombre y apellido
+                    // Esto dependerá de cómo esté estructurado tu componente 'friend'
+                    const nameElement = friendsElements[i].querySelector('.name-search');
+
+                    // Si hay un usuario para este elemento, establece el nombre y apellido
+                    if (data.usuarios[i]) {
+                        const usuario = data.usuarios[i];
+                        nameElement.textContent = `${usuario.nombre} ${usuario.apellido}`;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar los datos de los usuarios:', error);
+            });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      // Buscar el span con el ID 'userName'
+      const userNameSpan = document.getElementById("userName");
+
+      try {
+        // Obtener la información del usuario
+        const name = await getInfoUser("user-1");
+
+        // Verificar si se encontró el span
+        if (userNameSpan) {
+          // Modificar el contenido del span
+          userNameSpan.textContent = name;
+        } else {
+          console.error('No se encontró el span con el ID "userName"');
+        }
+      } catch (error) {
+        console.error("Error al obtener la información del usuario:", error);
+      }
+    });
+
+    async function getInfoUser(id) {
+      const eventResponse = await fetch("http://localhost:3000/users");
+      const data = await eventResponse.json();
+
+      let name = "";
+      data.forEach((user) => {
+        if (user.id === id) {
+          name = user.name;
+        }
+      });
+      return name;
+    }
+
+    async function getInfoUser(id) {
+      const eventResponse = await fetch("http://localhost:3000/users");
+      const data = await eventResponse.json();
+
+      let name = "";
+      data.forEach((user) => {
+        if (user.id === id) {
+          name = user.name;
+        }
+      });
+      return name;
+    }
+  </script>
