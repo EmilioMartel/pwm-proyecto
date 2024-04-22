@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -18,13 +19,13 @@ mark {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 1.25em 0;
-  width: 100%;
+    display: flex;
+    flex-direction: row;          /*esto no va creo que no debe ser column*/
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1.25em 0;
+    width: 100%;
 }
 
 .content {
@@ -58,6 +59,7 @@ h1 {
   justify-content: center;
   text-align: center;
   padding: 1.25em;
+  width:100%;
 }
 
 .titulo-seccion {
@@ -87,6 +89,11 @@ h1 {
       width: 80%;
       font-size: large;
   }
+
+  .tarjetas {
+    width: 100%;
+  }
+
 }
 
 /* Reglas de medios para dispositivos móviles */
@@ -113,5 +120,20 @@ h1 {
 
   h1 {
       font-size: x-large;
+  }
+
+  .caracteristicas {
+    padding: 0.75em;
+}
+
+  .titulo-seccion {
+    margin-bottom: 0.75em;
+    font-size: medium;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 }
