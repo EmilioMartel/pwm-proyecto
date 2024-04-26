@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "time-minder-3f8d9": {
+      "hosting": {
+        "time-minder-pwm": [
+          "time-minder-3f8d9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "time-minder-3f8d9"
+  }
+}
