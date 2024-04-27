@@ -16,6 +16,9 @@ import {
 } from './components';
 import { TimeMinderComponent } from './time-minder/time-minder.component'
 import { TimeMinderRoutingModule } from './time-minder-routing.module';
+import { FormsModule } from '@angular/forms';
+import { InputComponent } from './components/input/input.component';
+import { ChatScreenComponent } from './components/chat-screen/chat-screen.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +34,14 @@ import { TimeMinderRoutingModule } from './time-minder-routing.module';
     FriendUnconfirmedRequestComponent,
     ModalComponent,
     PlanCardsComponent,
-    TimeMinderComponent
+    TimeMinderComponent,
+    InputComponent,
+    ChatScreenComponent
   ],
   imports: [
     CommonModule,
-    TimeMinderRoutingModule
+    TimeMinderRoutingModule,
+    FormsModule
   ]
 })
 export class TimeMinderModule { }

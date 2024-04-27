@@ -1,0 +1,4 @@
+<div class="write-zone">
+  <input id="input-text" placeholder="Escribe ..." [ngModel]="inputValue" (input)="onInputChange($event)">
+  <button type="submit" (click)="sendMessage()" id="send-btn">Enviar</button>
+</div>

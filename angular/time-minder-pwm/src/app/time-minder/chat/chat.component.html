@@ -4,23 +4,9 @@
       <hr>
       <button class="btnCreateGroup">Crear grupo</button>
       <ul id="chat-list">
+        <li *ngFor="let chat of chatList">{{chat.id}}</li>
       </ul>
   </aside>
-  <main>
-      <button id="toggleAsideBtn" class="toggle-aside-btn">Mostrar/Ocultar</button>
 
-      <header>
-        <h4>Nombre del usuario</h4>
-        <div class="spacer"></div>
-        <img src="../../../assets/images/imagen-usuario.png" alt="">
-      </header>
-
-      <section id="chat-zone"></section>
-
-      <div class="write-zone">
-          <input id="input-text" placeholder="Escribe ..." >
-          <button id="send-btn">Enviar</button>
-      </div>
-
-  </main>
+  <app-chat-screen [chatList]="chatList"></app-chat-screen>
 </div>

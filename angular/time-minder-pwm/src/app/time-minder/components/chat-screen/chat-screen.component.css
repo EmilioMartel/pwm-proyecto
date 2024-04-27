@@ -1,42 +1,27 @@
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: max-content;
-  width: 100%;
-  background-color: red;
-}
-.spacer {
-  flex: 1 1;
-}
-
 img {
   height: 80px;
   width: 80px;
 }
 
-#contenido {
-  width: 100%;
-  min-height: 100%;
+header {
   display: flex;
 }
 
-aside{
-  width: 25%;
-  min-height: 80vh;
-  overflow-y: auto;
-  background-color: blanchedalmond;
+.spacer {
+  flex: 1 1;
 }
 
+
+
 main{
-  min-width: 75%;
+  min-width: 70vw;
   min-height: 80vh;
+  background-color: red;
 }
 
 .write-zone {
   display: flex;
-  height: max-content;
   background-color: bisque;
 }
 
@@ -60,7 +45,7 @@ li {
 
 section {
   background-color: bisque;
-  height: 80%;
+  min-height: 80vh;
   overflow-y: scroll;
 }
 
