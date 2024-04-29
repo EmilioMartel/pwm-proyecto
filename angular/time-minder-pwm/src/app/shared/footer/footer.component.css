@@ -44,7 +44,7 @@ p {
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   footer .row {
-    justify-content: center;
+    justify-content:space-around;
   }
 
   footer {
@@ -57,7 +57,7 @@ p {
   footer .row {
     flex-direction: column;
   }
-  
+
   footer {
     font-size: small;
   }
