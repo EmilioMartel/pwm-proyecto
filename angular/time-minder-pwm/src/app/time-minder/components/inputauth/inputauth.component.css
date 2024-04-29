@@ -37,7 +37,7 @@
   /* Tus estilos para tablets aquí */
 
   .form_line_input {
-      width: 80%;
+      width: 100%;
       font-size: 1rem;
   }
 
@@ -61,7 +61,7 @@
 
   .form_line_input {
       visibility: visible;
-      width: 80%;
+      width: 100%;
       font-size: 1rem;
   }
 
