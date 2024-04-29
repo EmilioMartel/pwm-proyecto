@@ -14,4 +14,5 @@ export class LoginComponent {
   @Input() tipoContrasena: string="password"
   @Input() minlength: string="6"
   @Input() idContrasena: string="mail"
+  @Input() titulo: string="Iniciar Sesión"
 }

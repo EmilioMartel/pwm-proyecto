@@ -16,7 +16,8 @@ import { TimeMinderModule } from '../time-minder/time-minder.module';
     ErrorPageComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

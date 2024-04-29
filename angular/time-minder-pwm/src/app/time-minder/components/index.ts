@@ -4,5 +4,9 @@ export { FriendRequestComponent } from "./friend-request/friend-request.componen
 export { FriendUnconfirmedRequestComponent } from "./friend-unconfirmed-request/friend-unconfirmed-request.component";
 export { ModalComponent } from "./modal/modal.component";
 export { PlanCardsComponent } from "./plan-cards/plan-cards.component";
+import { BotonAceptarComponent } from './boton-aceptar/boton-aceptar.component'
+import { BotonComponent } from './boton/boton.component';
+import { CardComponent } from './card/card.component';
+import { InputauthComponent } from './inputauth/inputauth.component';
 
 
