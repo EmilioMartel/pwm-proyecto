@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlanComponent } from './plan/plan.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { TimeMinderModule } from '../time-minder/time-minder.module';
 
 
 
@@ -18,7 +19,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TimeMinderModule
   ]
 })
 export class SharedModule { }
