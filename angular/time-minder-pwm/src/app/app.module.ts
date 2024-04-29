@@ -9,7 +9,6 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
-import { InputauthComponent } from './time-minder/components/inputauth/inputauth.component';
 
 
 @NgModule({

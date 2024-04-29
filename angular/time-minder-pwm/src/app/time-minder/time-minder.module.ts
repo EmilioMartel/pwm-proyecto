@@ -49,7 +49,8 @@ import { InputauthComponent } from './components/inputauth/inputauth.component';
   imports: [
     CommonModule,
     TimeMinderRoutingModule,
-    FormsModule
+    FormsModule,
+    TimeMinderModule
   ],
   exports: [
     BotonAceptarComponent,

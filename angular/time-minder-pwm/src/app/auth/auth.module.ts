@@ -5,7 +5,7 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth/auth.component';
-
+import { TimeMinderModule } from '../time-minder/time-minder.module';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { AuthComponent } from './auth/auth.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    TimeMinderModule
   ]
 })
 export class AuthModule { }
