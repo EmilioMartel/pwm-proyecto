@@ -1,0 +1,84 @@
+[debug] [2024-04-22T10:16:41.282Z] ----------------------------------------------------------------------
+[debug] [2024-04-22T10:16:41.284Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2024-04-22T10:16:41.284Z] CLI Version:   13.7.3
+[debug] [2024-04-22T10:16:41.284Z] Platform:      darwin
+[debug] [2024-04-22T10:16:41.284Z] Node Version:  v20.10.0
+[debug] [2024-04-22T10:16:41.284Z] Time:          Mon Apr 22 2024 11:16:41 GMT+0100 (hora de verano de Europa occidental)
+[debug] [2024-04-22T10:16:41.284Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-22T10:16:41.286Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-22T10:16:41.286Z] > authorizing via signed-in user (emiliomtg@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/emmartel/Desktop/Universidad/PWM/angular/time-minder
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-04-22T10:17:08.970Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/availableProjects pageSize=100
+[debug] [2024-04-22T10:17:09.483Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/availableProjects 200
+[debug] [2024-04-22T10:17:09.483Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/availableProjects [omitted]
+[debug] [2024-04-22T10:17:14.765Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311:addFirebase [none]
+[debug] [2024-04-22T10:17:16.932Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311:addFirebase 200
+[debug] [2024-04-22T10:17:16.933Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311:addFirebase {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm"}
+[debug] [2024-04-22T10:17:16.934Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm [none]
+[debug] [2024-04-22T10:17:19.138Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm 200
+[debug] [2024-04-22T10:17:19.138Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm"}
+[debug] [2024-04-22T10:17:19.639Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-04-22T10:17:19.640Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm [none]
+[debug] [2024-04-22T10:17:19.975Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm 200
+[debug] [2024-04-22T10:17:19.975Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm"}
+[debug] [2024-04-22T10:17:20.976Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-04-22T10:17:20.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm [none]
+[debug] [2024-04-22T10:17:21.232Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm 200
+[debug] [2024-04-22T10:17:21.233Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm"}
+[debug] [2024-04-22T10:17:23.234Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-04-22T10:17:23.235Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm [none]
+[debug] [2024-04-22T10:17:23.525Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm 200
+[debug] [2024-04-22T10:17:23.526Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm"}
+[debug] [2024-04-22T10:17:27.527Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-04-22T10:17:27.528Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm [none]
+[debug] [2024-04-22T10:17:27.850Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm 200
+[debug] [2024-04-22T10:17:27.850Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm {"name":"operations/workflows/ZGU4MzhjMGMtNmU4Zi00ZmM3LTllYTgtYTFkNGY2MjA0YTVm","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"astral-theory-379311","projectNumber":"579328788473","displayName":"My Maps Project","name":"projects/astral-theory-379311","resources":{"hostingSite":"astral-theory-379311"}}}
+[info] 
+[info] 🎉🎉🎉 Your Firebase project is ready! 🎉🎉🎉
+[info] 
+[info] Project information:
+[info]    - Project ID: astral-theory-379311
+[info]    - Project Name: My Maps Project
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/astral-theory-379311/overview
+[info] i  Using project astral-theory-379311 (My Maps Project) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-04-22T10:17:27.861Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-04-22T10:17:27.861Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/astral-theory-379311
+[debug] [2024-04-22T10:17:29.169Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com 200
+[debug] [2024-04-22T10:17:29.169Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com [omitted]
+[warn] ⚠  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2024-04-22T10:17:29.170Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2024-04-22T10:17:29.170Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/astral-theory-379311
+[debug] [2024-04-22T10:17:30.072Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2024-04-22T10:17:30.072Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2024-04-22T10:17:40.074Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-04-22T10:17:40.074Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/astral-theory-379311
+[debug] [2024-04-22T10:17:40.988Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com 200
+[debug] [2024-04-22T10:17:40.989Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/astral-theory-379311/services/firebasedatabase.googleapis.com [omitted]
+[info] ✔  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-04-22T10:17:40.994Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311 [none]
+[debug] [2024-04-22T10:17:41.333Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311 200
+[debug] [2024-04-22T10:17:41.333Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/astral-theory-379311 {"projectId":"astral-theory-379311","projectNumber":"579328788473","displayName":"My Maps Project","name":"projects/astral-theory-379311","resources":{"hostingSite":"astral-theory-379311"},"state":"ACTIVE","etag":"1_aae63e82-f5d4-4099-90de-68f438e726ec"}

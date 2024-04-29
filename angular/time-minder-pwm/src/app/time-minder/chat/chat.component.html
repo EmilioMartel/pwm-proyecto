@@ -1,0 +1,12 @@
+<div id="contenido">
+  <aside id="sidebar">
+      <h2>Listado de Chats</h2>
+      <hr>
+      <button class="btnCreateGroup">Crear grupo</button>
+      <ul id="chat-list">
+        <li *ngFor="let chat of chatList">{{chat.id}}</li>
+      </ul>
+  </aside>
+
+  <app-chat-screen [chatList]="chatList"></app-chat-screen>
+</div>
