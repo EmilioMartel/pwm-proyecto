@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { PlanComponent } from './shared/plan/plan.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'time-minder', loadChildren: () => import('./time-minder/time-minder.module').then(m => m.TimeMinderModule)},
+  { path: 'plan', component: PlanComponent},
   { path: '**', component: ErrorPageComponent}
 ];
 

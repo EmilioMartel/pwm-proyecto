@@ -1,0 +1,95 @@
+.contenedor{
+  background-color: #0077B6;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  width: 300px; /* O el ancho que prefieras */
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-height: 350px;
+}
+
+.titulo{
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.price {
+  font-size: 3em;
+  margin: 20px 0;
+}
+
+.contenido ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.caracteristica {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.checkmark {
+  color: #00ff00;
+  margin-right: 10px;
+}
+
+.contenedor:hover {
+  transform: scale(1.05);
+}
+
+.btn-get-started {
+  background-color: #7bc4e1;
+  border: none;
+  border-radius: 25px;
+  color: black;
+  padding: 15px 30px;
+  cursor: pointer;
+  margin: 20px 0;
+  font-weight: bold;
+  color: white;
+
+}
+
+.btn-get-started:hover {
+  background-color: #1a5d78;
+
+}
+
+.btn-get-started a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1024px){
+  .contenedor{
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 300px;
+    min-height: 262px;
+  }
+
+  .price {
+      font-size: 2.25em;
+      margin: 15px 0;
+  }
+
+  .caracteristica {
+      margin: 8px 0;
+      text-align: left;
+  }
+
+  .checkmark {
+      color: #00ff00;
+      margin-right: 8px;
+  }
+
+  .btn-get-started {
+    border-radius: 18px;
+    padding: 11px 22px;
+    cursor: pointer;
+    margin: 15px 0;
+  }
+}

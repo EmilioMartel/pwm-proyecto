@@ -12,13 +12,14 @@ import {
   FriendRequestComponent,
   FriendUnconfirmedRequestComponent,
   ModalComponent,
-  PlanCardsComponent
 } from './components';
 import { TimeMinderComponent } from './time-minder/time-minder.component'
 import { TimeMinderRoutingModule } from './time-minder-routing.module';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
 import { ChatScreenComponent } from './components/chat-screen/chat-screen.component';
+import { FreePlanCardComponent } from './components/plan-cards/free-plan-card/free-plan-card.component';
+import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-card/premium-plan-card.component';
 
 @NgModule({
   declarations: [
@@ -33,15 +34,20 @@ import { ChatScreenComponent } from './components/chat-screen/chat-screen.compon
     FriendRequestComponent,
     FriendUnconfirmedRequestComponent,
     ModalComponent,
-    PlanCardsComponent,
     TimeMinderComponent,
     InputComponent,
-    ChatScreenComponent
+    ChatScreenComponent,
+    FreePlanCardComponent,
+    PremiumPlanCardComponent
   ],
   imports: [
     CommonModule,
     TimeMinderRoutingModule,
     FormsModule
+  ],
+  exports: [
+    FreePlanCardComponent,
+    PremiumPlanCardComponent
   ]
 })
 export class TimeMinderModule { }
