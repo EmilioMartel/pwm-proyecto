@@ -8,7 +8,7 @@ body {
 
 #presentation-p {
   text-align: center;
-  width: 60%;
+  width: 100%;
   font-size: x-large;
 }
 
@@ -19,13 +19,13 @@ mark {
 }
 
 .container {
-    display: flex;
-    flex-direction: row;          /*esto no va creo que no debe ser column*/
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 1.25em 0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 1.25em 0;
+  width: 100%;
 }
 
 .content {
@@ -40,11 +40,14 @@ mark {
 
 h1 {
   color: #0077b6;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 #image-zone{
-  width: 30%;
+  width: 5%;
+  margin-left: 40px;
 }
 
 #imagen-homepage {
@@ -58,7 +61,6 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.25em;
   width:100%;
 }
 
@@ -75,56 +77,162 @@ h1 {
   margin-bottom: 4.375em;
 }
 
+.zona-presentacion {
+  display: flex;
+  flex-direction: row;
+}
+
+.zona-primera {
+  display: flex;
+  margin-left: 70px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-tutorial {
+  display: flex;
+  width: 100%;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-link {
+  display: none;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 100px;
+}
+
+.cuadro-texto-completo {
+  display: flex;
+  border: solid #0077b6;
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+}
+
+.cuadro-texto {
+  flex: 1;
+  max-width: 37.5em;
+  padding: 1.25em;
+  background-color: white;
+  text-align: justify;
+}
+
+.cuadro-texto h2 {
+  color: black;
+}
+
+.video {
+  flex: 1;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.625em;
+}
+
+.pizarra {
+  font-family: 'Permanent Marker', cursive; 
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   #image-zone {
-      display: none;
+    display: none;
   }
 
   .content {
-      width: 100%;
+    width: 100%;
   }
 
   #presentation-p {
-      width: 80%;
-      font-size: large;
+    width: 100%;
+    font-size: large;
+  }
+
+  svg {
+    margin-bottom: 50px;
+  }
+
+  #muñeco-video {
+    display: none;
   }
 
   .tarjetas {
     width: 100%;
   }
 
+  .zona-primera {
+  margin-left: 50px;
+  margin-right: 50px;
+  }
+
+  .video-tutorial .cuadro-texto:first-child {
+  display: block;
+}
+
+.video-tutorial .cuadro-texto:last-child {
+  display: none;
+}
+
+.video-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: bold;
+  margin-top: 1.25em;
+  background-color: white;
+}
+
+.video-link:hover {
+color: #f4a261;
+}
+
+.video-link:active {
+  transform: translateY(1px);
+}
+
 }
 
 /* Reglas de medios para dispositivos móviles */
 @media only screen and (max-width: 600px) {
   #image-zone{
-      display: none;
+    display: none;
+  }
+
+  #muñeco-video {
+    display: none;
+  }
+
+  svg {
+    margin-bottom: 25px;
   }
 
   #presentation-p {
-      width: 80%;
-      font-size: medium;
+    width: 100%;
+    font-size: medium;
   }
 
   .container {
-      flex-direction: column;
-      padding: 0.75em 0;
-      width: 100%;
+    flex-direction: column;
+    padding: 0.75em 0;
+    width: 100%;
   }
 
   .content {
-      margin-top: 1.0625em;
-      width: 100%;
+    margin-top: 1.0625em;
+    width: 100%;
   }
 
   h1 {
-      font-size: x-large;
+    font-size: x-large;
+    width: 100%;
   }
-
-  .caracteristicas {
-    padding: 0.75em;
-}
 
   .titulo-seccion {
     margin-bottom: 0.75em;
@@ -136,4 +244,13 @@ h1 {
     width: 100%;
     align-items: center;
   }
+
+  .zona-primera {
+    margin-left: 50px;
+  }
+
+  .video-tutorial {
+  display: none;
+}
+
 }
