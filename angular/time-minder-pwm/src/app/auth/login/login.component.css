@@ -12,7 +12,7 @@ main {
   padding: 2.5em;
   background-color: white;
   border-radius: 1rem;
-  max-width: 20rem; /* Ancho máximo para escritorio */
+  max-width: 20rem;
   box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
   max-width: 25rem;
   width: 100%;
@@ -48,6 +48,7 @@ p {
   display: flex;
   justify-content: center;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* Reglas de medios para dispositivos tablets */
