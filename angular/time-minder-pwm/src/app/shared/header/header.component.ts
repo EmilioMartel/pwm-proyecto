@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  datobotonIS = "Iniciar Sesión"
+  hrefbotonIS = "/auth"
+  customclassboton = "botonR"
+  datobotonR = "Registrarse"
+  hrefbotonR = "/auth/sign-in"
 }

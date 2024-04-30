@@ -14,12 +14,13 @@ import { TimeMinderModule } from '../time-minder/time-minder.module';
     PlanComponent,
     ErrorPageComponent
   ],
-  exports: [
-    HeaderComponent
-  ],
   imports: [
     CommonModule,
     TimeMinderModule
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
