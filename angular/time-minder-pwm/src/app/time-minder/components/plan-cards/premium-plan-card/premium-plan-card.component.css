@@ -53,15 +53,6 @@
 
 }
 
-.btn-get-started:hover {
-  background-color: #1a5d78;
-
-}
-
-.btn-get-started a {
-  text-decoration: none;
-}
-
 @media only screen and (max-width: 1024px){
   .contenedor{
     border-radius: 15px;
@@ -84,12 +75,5 @@
   .checkmark {
       color: #00ff00;
       margin-right: 8px;
-  }
-
-  .btn-get-started {
-    border-radius: 18px;
-    padding: 11px 22px;
-    cursor: pointer;
-    margin: 15px 0;
   }
 }

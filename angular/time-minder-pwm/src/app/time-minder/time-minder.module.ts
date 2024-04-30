@@ -20,6 +20,10 @@ import { InputComponent } from './components/input/input.component';
 import { ChatScreenComponent } from './components/chat-screen/chat-screen.component';
 import { FreePlanCardComponent } from './components/plan-cards/free-plan-card/free-plan-card.component';
 import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-card/premium-plan-card.component';
+import { InputAuthComponent } from './components/input-auth/input-auth.component';
+import { FormSignInComponent } from './components/form-sign-in/form-sign-in.component';
+import { BotonComponent } from './components/boton/boton.component';
+import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-c
     InputComponent,
     ChatScreenComponent,
     FreePlanCardComponent,
-    PremiumPlanCardComponent
+    PremiumPlanCardComponent,
+    InputAuthComponent,
+    FormSignInComponent,
+    BotonComponent,
+    BotonAceptarComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +55,9 @@ import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-c
   ],
   exports: [
     FreePlanCardComponent,
-    PremiumPlanCardComponent
+    PremiumPlanCardComponent,
+    FormSignInComponent,
+    BotonComponent
   ]
 })
 export class TimeMinderModule { }

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './premium-plan-card.component.css'
 })
 export class PremiumPlanCardComponent {
-
+  titulo = "Registrarse"
 }

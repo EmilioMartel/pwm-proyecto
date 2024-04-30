@@ -1,0 +1,121 @@
+body{
+  background-color: #fff;
+  background-size: 1.25em 1.25em;
+  background-position: 0 0, 0.625em 0.625em;
+  display: grid;
+  min-height: 100vh;
+}
+
+.form{
+  background-color: #fff;
+  margin: auto;
+  width: 90%;
+  max-width: 25em;
+  padding: 4.5em 3em;
+  text-align: center;
+  box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+  margin-bottom: 3em;
+  margin-top: 3.2em;
+  border-radius: 1rem;
+}
+
+.form_container{
+  margin-top: 0.188em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.form_group{
+  position: relative;
+  --color: #575757;
+
+}
+
+.form_submit{
+  background: #3866f2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: .8em 0;
+  border: none;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form_submit:hover {
+  background-color: #f4a261;
+}
+
+.form_line_group {
+  display: flex;
+  gap: 3rem;
+}
+
+.form_line_join_group {
+  display: flex;
+}
+
+.link {
+  color:#0077b6;
+  font-size: 1em;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Tus estilos para tablets aquí */
+  body{
+      background-size: 1em 1em;
+      background-position: 0 0, 1em 1em;
+      min-height: 70vh;
+  }
+
+  .form{
+      width: 90vh;
+      max-width: 18em;
+      padding: 2em 2em;
+      box-shadow: 0 0.5em 0.5em 0em rgb(0 0 0 / 30%);
+      margin-bottom: 5em;
+      margin-top: 5em;
+  }
+
+  .form_container{
+      margin-top: 0.188em;
+      display: grid;
+      gap: 2em;
+  }
+
+  .form_line_join_group {
+      display: flex;
+      padding-left: .3em;
+
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Tus estilos para móviles aquí */
+  .form{
+      visibility: hidden;
+  }
+
+  .form_line_join_group {
+      visibility: visible;
+      display: flex;
+      padding-left: .3em;
+  }
+
+  .form_submit{
+      visibility: visible;
+  }
+}
