@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './friend-list.component.css'
 })
 export class FriendListComponent {
+  componenteActivo: string = 'Amigos';
 
+  mostrarComponente(componente: string) {
+    this.componenteActivo = componente;
+  }
 }
