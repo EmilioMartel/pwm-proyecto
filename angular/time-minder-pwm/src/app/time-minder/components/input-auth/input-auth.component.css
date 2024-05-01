@@ -27,7 +27,7 @@
   cursor: pointer;
   position: absolute;
   top: 0;
-  left: 0.1em;
+  left: 0em;
   transform: translateY(0.625em);
   transition: transform .5s, color .3s;
 }
@@ -51,7 +51,7 @@
 
   .form_label{
       top: 5;
-      left: 0.7em;
+      left: 1.6em;
   }
 }
 
@@ -76,6 +76,6 @@
   .form_label{
       visibility: visible;
       top: 5;
-      left: 0.9em;
+      left: 2.3em;
   }
 }
