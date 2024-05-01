@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-friend-unconfirmed-request',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './friend-unconfirmed-request.component.css'
 })
 export class FriendUnconfirmedRequestComponent {
-
+  @Input() nombre: string = "Cristian Marrero López";
 }
