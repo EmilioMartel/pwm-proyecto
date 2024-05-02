@@ -1,0 +1,140 @@
+header {
+  padding: 0.625em;
+  color: black;
+  margin-top: 20px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#logo {
+  width: 3.125em;
+  height: auto;
+  margin-right: 0.625em;
+}
+
+#menu-icono {
+  display: none;
+}
+
+.bi-list {
+  display: none;
+}
+
+.logo-text {
+  color: #0077b6;
+  font-weight: bold;
+}
+
+nav.menu-navegacion {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 6px;
+  font-size: 20px;
+  margin: 0 1.25em;
+}
+
+nav a:hover {
+  background-color: #f4f4f4;
+  border-radius: 10%;
+}
+
+.nav-user {
+  display: flex;
+  flex-direction: row;
+}
+
+.bi-person-circle {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.625em;
+  vertical-align: middle;
+}
+
+.user-name {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1.25rem;
+}
+
+.user-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* Reglas de medios para dispositivos tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  #logo {
+    display: none;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .bi-person-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+}
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  #logo {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .bi-list {
+    display: initial;
+  }
+
+  .bi-person-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  nav.menu-navegacion {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    font-size: small;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 1;
+  }
+
+  nav.menu-navegacion a {
+    font-size: 14px;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  #menu-icono:checked ~ nav {
+    display: flex;
+  }
+}
