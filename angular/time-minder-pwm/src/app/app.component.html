@@ -1,4 +1,10 @@
 
-<app-header></app-header>
+<div *ngIf="!isDiaryRoute()">
+  <app-header></app-header>
+</div>
+<div *ngIf="isDiaryRoute()">
+  <app-hconlogin></app-hconlogin>
+</div>
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>

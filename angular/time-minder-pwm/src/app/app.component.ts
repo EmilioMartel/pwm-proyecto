@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'time-minder-pwm';
+  constructor(private router: Router) {}
+
+  isDiaryRoute(): boolean {
+    // Obtener la ruta activa
+    const currentUrl = this.router.url;
+
+    // Verificar si la ruta activa es 'diary'
+    return currentUrl.includes('time-minder');
+  }
 }
