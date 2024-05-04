@@ -23,6 +23,7 @@ import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.
 import { BotonComponent } from './components/boton/boton.component';
 import { CardComponent } from './components/card/card.component';
 import { InputauthComponent } from './components/inputauth/inputauth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { InputauthComponent } from './components/inputauth/inputauth.component';
   imports: [
     CommonModule,
     TimeMinderRoutingModule,
+    HttpClientModule,
     FormsModule,
   ],
   exports: [
