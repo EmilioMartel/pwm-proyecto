@@ -1,0 +1,201 @@
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.profile-container {
+  display: flex;
+  position: relative;
+  flex: 1;
+}
+
+.barra-lateral {
+  width: 250px;
+  overflow: hidden;
+  padding: 1.25em 0.938em;
+  background-color: white;
+  transition: width 0.5s ease, left 0.5s ease;
+  z-index: 50;
+}
+
+.barra-lateral hr {
+  height: 100%;
+  background-color: black;
+}
+
+.profile-container .barra-reducida {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.barra-lateral .panel {
+  width: 100%;
+  height: 2.813em;
+  margin-top: 1.25em;
+  margin-bottom: 2.5em;
+  display: flex;
+  align-items: center;
+}
+
+.barra-lateral svg {
+  min-width: 80px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.barra-lateral .panel span {
+  margin-left: 0.313em;
+  font-size: 1.25em;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+.barra-lateral span {
+  font-size: 1.125em;
+  text-align: left;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.barra-lateral span.oculto {
+  opacity: 0;
+  width: 0;
+}
+
+.barra-lateral .navegacion li {
+  margin-left: 0;
+  list-style: none;
+  display: flex;
+  margin-bottom: 0.313em;
+}
+
+.barra-lateral .navegacion ul {
+  padding: 0;
+}
+
+.barra-lateral .navegacion a {
+  width: 100%;
+  height: 2.813em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.625em;
+  padding-right: 0.313em;
+  padding-left: 0.313em;
+  color: black;
+}
+
+.barra-lateral .navegacion a:hover {
+  color: #0077b6;
+}
+
+.barra-lateral .navegacion svg {
+  min-width: 3.125em;
+  font-size: 1.25em;
+}
+
+#editarInformacion {
+  background-color: whitesmoke;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main-content h2 {
+  color: #0077b6;
+}
+
+.profile-image {
+  width: 6.25em;
+  height: 6.25em;
+}
+
+form {
+  margin-top: 1.25em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: left;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:hover,
+select:hover,
+input:focus,
+select:focus {
+  border-color: #0077b6;
+}
+
+.botonesMovimiento {
+  justify-content: space-between;
+  min-width: 5em;
+  text-decoration: none;
+  font-size: 2.5em;
+  display: none;
+  cursor: pointer;
+}
+
+.botonesMovimiento a {
+  color: black;
+  text-decoration: none;
+}
+
+.botonesMovimiento a:hover {
+  color: #f4a261;
+}
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .profile-container .barra-lateral {
+    position:absolute;
+    height: 100%;
+    left: -400px;
+  }
+
+  .botonesMovimiento {
+    display: flex;
+  }
+
+  .botonesMovimiento svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .main-content h2 {
+    font-size: x-large;
+  }
+
+  .profile-image {
+    width: 5.25em;
+    height: 5.25em;
+  }
+}
