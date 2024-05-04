@@ -20,6 +20,8 @@ import { HconloginComponent } from './hconlogin/hconlogin.component';
   exports: [
     HeaderComponent,
     HconloginComponent,
+    PlanComponent,
+    ErrorPageComponent,
     FooterComponent
   ],
   imports: [

@@ -17,4 +17,9 @@ export class AppComponent {
     // Verificar si la ruta activa es 'diary'
     return currentUrl.includes('time-minder');
   }
+
+  isErrorRoute(): boolean {
+    const url = this.router.url;
+  return !(url.includes('time-minder') || url.includes('auth') || url.includes('')) ;
+  }
 }
