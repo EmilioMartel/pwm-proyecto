@@ -1,1 +1,17 @@
-<p>error-page works!</p>
+<body>
+  <div class="error-container">
+    <img src="../../../assets/images/error.svg" id="error" />
+    <div class="error-card">
+      <h1>Error 404</h1>
+      <p>
+        ¡Hola! Lo sentimos, esta página no existe. Verifica que la dirección URL
+        sea la correcta.
+      </p>
+      <app-boton
+        [title]="datobotonR"
+        [redirectToUrl]="hrefbotonR"
+        [customClass]="customclassboton"
+      ></app-boton>
+    </div>
+  </div>
+</body>
