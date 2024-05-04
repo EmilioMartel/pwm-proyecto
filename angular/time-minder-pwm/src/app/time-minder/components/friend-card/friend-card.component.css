@@ -1,11 +1,7 @@
-.container {
-  display: flex;
-  padding: 10px;
-}
-
 .card {
   display: flex;
   align-items: center;
+  justify-content:space-evenly;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -13,6 +9,7 @@
   box-sizing: border-box;
   height: 65px;
   width: auto;
+  margin: 2px;
 }
 
 .name {
@@ -25,6 +22,7 @@
 }
 
 .button {
+  display: flex;
   border: none;
   background-color: transparent;
   cursor: pointer;

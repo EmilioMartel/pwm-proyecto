@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BotonComponent } from '../index'
 
 @Component({
   selector: 'app-form-sign-in',
@@ -7,6 +6,7 @@ import { BotonComponent } from '../index'
   styleUrl: './form-sign-in.component.css'
 })
 export class FormSignInComponent {
+
   //Nombre
   contenidoNombre = "Nombre"
   typeNombre = "text"
@@ -39,4 +39,6 @@ export class FormSignInComponent {
 
   //Boton
   titulo = "Registrarse"
+
+
 }
