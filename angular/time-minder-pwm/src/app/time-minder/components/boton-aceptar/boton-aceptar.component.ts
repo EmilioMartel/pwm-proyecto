@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-boton-aceptar',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class BotonAceptarComponent {
   @Input() title: string = "";
+  @Output() buttonClicked = new EventEmitter<void>();
+
+  onClick() {
+    this.buttonClicked.emit();
+  }
 }

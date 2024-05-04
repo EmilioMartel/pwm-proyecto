@@ -32,14 +32,19 @@
   transition: transform .5s, color .3s;
 }
 
-input.error, label.error {
-  border-color: red;
+.error-msg {
+  display: flex;
+  justify-content: flex-start;
+  font-family: sans-serif;
+
   color: red;
+  font-size: 0.7em;
+  font-weight: bold;
 }
 
-.error-message {
-  color: red;
-  font-size: 0.8em;
+.error {
+  color: red; /* Cambia el color del texto y la etiqueta */
+  border-color: red; /* Cambia el color del borde si es aplicable */
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

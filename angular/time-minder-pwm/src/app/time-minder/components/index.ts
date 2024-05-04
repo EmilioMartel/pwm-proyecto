@@ -8,4 +8,5 @@ export { PremiumPlanCardComponent } from "./plan-cards/premium-plan-card/premium
 export { InputAuthComponent } from './input-auth/input-auth.component'
 export { FormSignInComponent } from './form-sign-in/form-sign-in.component'
 export { BotonComponent } from './boton/boton.component'
+export { InputAuthValidateComponent } from './input-auth-validate/input-auth-validate.component'
 

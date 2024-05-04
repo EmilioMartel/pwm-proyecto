@@ -10,58 +10,59 @@
         <a routerLink="/auth/" class="redirection">Inicia sesión</a>
       </p>
     </div>
-    <div class="form_container">
-      <div class="form_group">
-        <app-input-auth #nombreInput
-          [type]="typeNombre"
-          [contenido]="contenidoNombre"
-          [identificador]="identificadorNombre"
-          [pattern]="patternNombre"
-        />
-      </div>
-      <div class="form_group">
-        <app-input-auth
-          [type]="typeApellido"
-          [contenido]="contenidoApellido"
-          [identificador]="typeApellido"
-          [pattern]="typeApellido"
-        />
-      </div>
+    <form (ngSubmit)="almacenarDatos">
+      <div class="form_container">
+        <div class="form_group">
+          <app-input-auth-validate
+            [type]="typeNombre"
+            [contenido]="contenidoNombre"
+            [identificador]="identificadorNombre"
+            [pattern]="patternNombre"
+          />
+        </div>
+        <div class="form_group">
+          <app-input-auth-validate
+            [type]="typeApellido"
+            [contenido]="contenidoApellido"
+            [identificador]="typeApellido"
+            [pattern]="typeApellido"
+          />
+        </div>
 
-      <div class="form_group">
-        <app-input-auth
-          [type]="typeMail"
-          [contenido]="contenidoMail"
-          [identificador]="typeMail"
-          [pattern]="typeMail"
-        />
-      </div>
+        <div class="form_group">
+          <app-input-auth-validate
+            [type]="typeMail"
+            [contenido]="contenidoMail"
+            [identificador]="typeMail"
+            [pattern]="typeMail"
+          />
+        </div>
 
-      <div class="form_group">
-        <app-input-auth
-          [type]="typePassword"
-          [contenido]="contenidoPassword"
-          [identificador]="typePassword"
-          [pattern]="typePassword"
-        />
-      </div>
+        <div class="form_group">
+          <app-input-auth-validate
+            [type]="typePassword"
+            [contenido]="contenidoPassword"
+            [identificador]="typePassword"
+            [pattern]="typePassword"
+          />
+        </div>
 
-      <div class="form_group">
-        <app-input-auth
-          [type]="typeConfirmPassword"
-          [contenido]="contenidoConfirmPassword"
-          [identificador]="identificadorConfirmPassword"
-          [pattern]="patternConfirmPassword"
-        />
-      </div>
+        <div class="form_group">
+          <app-input-auth-validate
+            [type]="typeConfirmPassword"
+            [contenido]="contenidoConfirmPassword"
+            [identificador]="identificadorConfirmPassword"
+            [pattern]="patternConfirmPassword"
+          />
+        </div>
 
-      <div class="form_line_join_group">
-          <input id="TermYCond" type="checkbox" name="TermYCond">
-          <label for="TermYCond"><a href="#" class="link">Terminos y condiciones</a></label>
+        <div class="form_line_join_group">
+            <input id="TermYCond" type="checkbox" name="TermYCond">
+            <label for="TermYCond"><a href="#" class="link">Terminos y condiciones</a></label>
+        </div>
+        <app-boton-aceptar title="{{titulo}}"/>
       </div>
-
-      <app-boton-aceptar title="{{titulo}}"/>
-    </div>
+    </form>
   </form>
 </div>
 
