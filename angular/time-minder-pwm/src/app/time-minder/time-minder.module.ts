@@ -11,6 +11,7 @@ import {
   FriendCardComponent,
   FriendRequestComponent,
   FriendUnconfirmedRequestComponent,
+  InputAuthValidateComponent,
   ModalComponent,
 } from './components';
 import { TimeMinderComponent } from './time-minder/time-minder.component'
@@ -27,8 +28,6 @@ import { FreePlanCardComponent } from './components/plan-cards/free-plan-card/fr
 import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-card/premium-plan-card.component';
 import { InputAuthComponent } from './components/input-auth/input-auth.component';
 import { FormSignInComponent } from './components/form-sign-in/form-sign-in.component';
-import { BotonComponent } from './components/boton/boton.component';
-import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +54,8 @@ import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.
     InputAuthComponent,
     FormSignInComponent,
     BotonComponent,
-    BotonAceptarComponent
+    BotonAceptarComponent,
+    InputAuthValidateComponent
   ],
   imports: [
     CommonModule,
@@ -72,7 +72,8 @@ import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.
     FreePlanCardComponent,
     PremiumPlanCardComponent,
     FormSignInComponent,
-    BotonComponent
+    BotonComponent,
+    InputAuthValidateComponent
   ]
 })
 export class TimeMinderModule { }
