@@ -1,1 +1,27 @@
-<p>header works!</p>
+<header>
+  <img
+    src="../../assets/imagenes/logo-Dk9oukKRc-transformed.png"
+    alt="Logo"
+    id="logo"
+  />
+  <span class="logo-text">TIMEMINDER</span>
+  <input type="checkbox" id="menu-icono" />
+  <label for="menu-icono">
+    <i class="bi bi-list menu-icono"></i>
+  </label>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Planes</a>
+    <div class="idiomas">
+      <span>Idiomas</span>
+      <i class="bi bi-translate" id="idiomas"></i>
+      <ul>
+        <li><a href="#">Español</a></li>
+        <li><a href="#">Inglés</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <app-boton [title]="datobotonIS" [redirectToUrl]="hrefbotonIS"></app-boton>
+  <app-boton [title]="datobotonR" [redirectToUrl]="hrefbotonR" [customClass]="customclassboton"></app-boton>
+</header>

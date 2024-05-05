@@ -1,0 +1,47 @@
+
+.boton {
+  padding: 0.5em 0.9375em;
+  margin-left: 4px;
+  border-radius: 0.4375em;
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  display: inline-block;
+  border-color: transparent;
+}
+
+.botonR {
+  border: 2px solid #0077b6;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  color: #0077b6;
+}
+
+.botonR:hover {
+  color: white;
+  background-color: #0077b6;
+}
+
+.botones-derecha {
+  text-align: center;
+}
+
+/* Reglas de medios para dispositivos tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .boton {
+    font-size: 16px;
+  }
+}
+
+/* Reglas de medios para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .boton {
+    margin-left: 0px;
+    font-size: 14px;
+  }
+}

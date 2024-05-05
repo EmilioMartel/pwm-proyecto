@@ -1,12 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../assets/header/header.component';
-import { FooterComponent } from '../assets/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { environment } from '../environments/environment.development';
-
-import { initializeApp } from 'firebase/app';
 
 @Component({
   selector: 'app-root',

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -18,13 +19,13 @@ mark {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 1.25em 0;
-  width: 100%;
+    display: flex;
+    flex-direction: row;          /*esto no va creo que no debe ser column*/
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1.25em 0;
+    width: 100%;
 }
 
 .content {
@@ -51,6 +52,29 @@ h1 {
   height: 18.75em;
 }
 
+.caracteristicas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25em;
+  width:100%;
+}
+
+.titulo-seccion {
+  margin-bottom: 1.25em;
+  color: #0077b6;
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 4.375em;
+}
+
 /* Reglas de medios para dispositivos tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   #image-zone {
@@ -65,6 +89,11 @@ h1 {
       width: 80%;
       font-size: large;
   }
+
+  .tarjetas {
+    width: 100%;
+  }
+
 }
 
 /* Reglas de medios para dispositivos móviles */
@@ -91,5 +120,20 @@ h1 {
 
   h1 {
       font-size: x-large;
+  }
+
+  .caracteristicas {
+    padding: 0.75em;
+}
+
+  .titulo-seccion {
+    margin-bottom: 0.75em;
+    font-size: medium;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 }

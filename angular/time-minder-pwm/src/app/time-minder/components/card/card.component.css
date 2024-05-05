@@ -1,0 +1,25 @@
+.caracteristica {
+  background-color: #f8f8f8;
+  padding: 1.25em;
+  border-radius: 0.625em;
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 12.5em;
+  height: 100%;
+  margin: 0.625em;
+}
+
+.caracteristica:hover {
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 5em;
+  border: 0.125em solid #f4a261;
+  height: auto;
+  margin-bottom: 0.625em;
+}

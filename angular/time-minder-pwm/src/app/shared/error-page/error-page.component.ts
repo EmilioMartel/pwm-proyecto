@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './error-page.component.css'
 })
 export class ErrorPageComponent {
-
+  customclassboton = "botonR"
+  datobotonR = "Volver a la página de inicio"
+  hrefbotonR = "/"
 }

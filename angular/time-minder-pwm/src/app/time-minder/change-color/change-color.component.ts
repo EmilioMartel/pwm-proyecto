@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-change-color',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './change-color.component.css'
 })
 export class ChangeColorComponent {
+  @Input() titulo: string="Guardar Cambios"
+  barraReducida = false;
+
+  toggleBarraLateral(): void {
+    this.barraReducida = !this.barraReducida;
+  }
 
 }

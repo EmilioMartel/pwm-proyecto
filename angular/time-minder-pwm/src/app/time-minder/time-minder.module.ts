@@ -19,6 +19,11 @@ import { TimeMinderRoutingModule } from './time-minder-routing.module';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
 import { ChatScreenComponent } from './components/chat-screen/chat-screen.component';
+import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.component';
+import { BotonComponent } from './components/boton/boton.component';
+import { CardComponent } from './components/card/card.component';
+import { InputauthComponent } from './components/inputauth/inputauth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,7 @@ import { ChatScreenComponent } from './components/chat-screen/chat-screen.compon
     DiaryComponent,
     FriendListComponent,
     ProfileComponent,
+    InputauthComponent,
     ResourcesComponent,
     CreateGroupComponent,
     FriendCardComponent,
@@ -36,12 +42,22 @@ import { ChatScreenComponent } from './components/chat-screen/chat-screen.compon
     PlanCardsComponent,
     TimeMinderComponent,
     InputComponent,
+    CardComponent,
+    BotonAceptarComponent,
+    BotonComponent,
     ChatScreenComponent
   ],
   imports: [
     CommonModule,
     TimeMinderRoutingModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+  ],
+  exports: [
+    BotonAceptarComponent,
+    BotonComponent,
+    InputauthComponent,
+    CardComponent
   ]
 })
 export class TimeMinderModule { }

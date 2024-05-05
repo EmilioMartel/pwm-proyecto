@@ -1,1 +1,36 @@
-<p>login works!</p>
+<main>
+  <div class="login-section">
+    <h1>¡BIENVENIDO A TIMEMINDER!</h1>
+    <img
+      src="../../../assets/images/login.svg"
+      alt="Imagen de inicio de sesión"
+      id="login-image"
+    />
+
+    <form
+      class="form"
+      action="../../time-minder/diary/diary.html"
+      method="GET"
+      id="loginForm"
+    >
+      <div class="form-group">
+        <app-inputauth
+          contenido="{{ contenidoCorreo }}"
+          type="{{ tipo }}"
+          pattern="{{ patron }}"
+          identificador="{{ id }}"
+        ></app-inputauth>
+      </div>
+      <div class="form-group">
+        <app-inputauth
+          contenido="{{ contenidoContrasena }}"
+          type="{{ tipoContrasena }}"
+          pattern="{{ minlength }}"
+          identificador="{{ idContrasena }}"
+        ></app-inputauth>
+      </div>
+      <app-boton-aceptar title="{{ titulo }}"></app-boton-aceptar>
+    </form>
+    <p>¿Olvidaste tu contraseña?</p>
+  </div>
+</main>
