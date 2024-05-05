@@ -5,6 +5,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { TimeMinderModule } from '../time-minder/time-minder.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { TimeMinderModule } from '../time-minder/time-minder.module';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    TimeMinderModule
+    TimeMinderModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AuthModule { }

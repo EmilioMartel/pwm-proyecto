@@ -4,10 +4,20 @@
   <header>
     <h4>Nombre del usuario</h4>
     <div class="spacer"></div>
-    <img src="../../../assets/images/imagen-usuario.png" alt="">
+    <img src="../../../../assets/images/imagen-usuario.png" alt="">
   </header>
 
-  <section id="chat-zone"></section>
+  <section id="chat-zone">
+    <div id="chat-zone">
+      <ng-container *ngFor="let message of chatSelected?.data">
+        <div [ngClass]="(message.owner === 'user-1') ? 'bubble-right' : 'bubble-left'">
+          <li [ngClass]="(message.owner === 'user-1') ? 'my-chat' : 'other-chat'">
+            {{ message.message }}
+          </li>
+        </div>
+      </ng-container>
+    </div>
+  </section>
 
   <app-input (onInputValue)="getInputValue($event)"></app-input>
 

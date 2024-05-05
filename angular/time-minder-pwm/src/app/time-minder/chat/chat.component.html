@@ -4,9 +4,9 @@
       <hr>
       <button class="btnCreateGroup">Crear grupo</button>
       <ul id="chat-list">
-        <li *ngFor="let chat of chatList">{{chat.id}}</li>
+        <li *ngFor="let chat of chatList" (click)="showChat(chat)">{{chat.id}}</li>
       </ul>
   </aside>
 
-  <app-chat-screen [chatList]="chatList"></app-chat-screen>
+  <app-chat-screen *ngIf="chatSelected" [chatSelected]="chatSelected"></app-chat-screen>
 </div>

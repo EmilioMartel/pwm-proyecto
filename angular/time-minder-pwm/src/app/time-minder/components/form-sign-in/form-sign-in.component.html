@@ -10,7 +10,7 @@
         <a routerLink="/auth/" class="redirection">Inicia sesión</a>
       </p>
     </div>
-    <form (ngSubmit)="almacenarDatos">
+    <form [formGroup]="miFormulario" (ngSubmit)="enviarDatos()">
       <div class="form_container">
         <div class="form_group">
           <app-input-auth-validate

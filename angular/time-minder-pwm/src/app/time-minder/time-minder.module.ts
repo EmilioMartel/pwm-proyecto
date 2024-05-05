@@ -16,7 +16,7 @@ import {
 } from './components';
 import { TimeMinderComponent } from './time-minder/time-minder.component'
 import { TimeMinderRoutingModule } from './time-minder-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './components/input/input.component';
 import { ChatScreenComponent } from './components/chat-screen/chat-screen.component';
 import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.component';
@@ -62,6 +62,7 @@ import { FormSignInComponent } from './components/form-sign-in/form-sign-in.comp
     TimeMinderRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     BotonAceptarComponent,

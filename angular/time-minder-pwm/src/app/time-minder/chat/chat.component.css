@@ -29,10 +29,6 @@ aside{
   background-color: blanchedalmond;
 }
 
-main{
-  min-width: 75%;
-  min-height: 80vh;
-}
 
 .write-zone {
   display: flex;
@@ -101,7 +97,9 @@ section {
   box-shadow: 0 1px whitesmoke;
   transform: translateY(4px);
 }
-
+li:hover {
+  cursor: pointer;
+}
 
 .my-chat {
   height: fit-content;

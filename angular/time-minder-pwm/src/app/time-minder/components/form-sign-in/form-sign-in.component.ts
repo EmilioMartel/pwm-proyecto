@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
-import { BrowserModule } from '@angular/platform-browser';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-sign-in',
@@ -45,13 +42,29 @@ export class FormSignInComponent {
   //Boton
   titulo = "Registrarse"
 
-  constructor(private router: Router) {}
+  // Definir un FormGroup para el formulario
+  miFormulario: FormGroup = this.fb.group({
+    nombre: [''],
+    apellido:  [''],
+    mail:  ['', Validators.email],
+    password:  [''],
+    confirmPassword:  [''],
+  });
 
-  navigate() {
-    this.router.navigate(['/auth/']);
+  
+
+  constructor(private router: Router, private fb: FormBuilder) { }
+
+  // Método para enviar los datos del usuario
+  enviarDatos() {
+
+    // Aquí puedes enviar los datos a tu servidor o hacer cualquier otra acción necesaria
+    console.log("Datos del usuario:", this.miFormulario.value);
+    
+    // Después de enviar los datos, puedes redirigir a otra página
+    //this.router.navigate(['/auth/']);
   }
 
-  almacenarDatos(){
-    console.log("Hola puto!")
-  }
+
+  
 }

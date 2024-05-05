@@ -12,7 +12,7 @@ export class FirestoreService {
   constructor( private firestore: Firestore) {}
 
 
-  getBooks(): Observable<Chat[]> {
+  getChats(): Observable<Chat[]> {
     const chatsRef = collection(this.firestore, 'chats');
     return collectionData(chatsRef, { idField: 'id' }) as Observable<Chat[]>;
   }
