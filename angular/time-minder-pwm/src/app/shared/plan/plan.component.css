@@ -1,0 +1,19 @@
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 5%;
+  margin-top: 7.5em;
+  margin-bottom: 7.5em;
+}
+
+@media only screen and (max-width: 780px) {
+  /* Tus estilos para móviles aquí */
+  .cards-container{
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3em;
+      margin-bottom: 3em;
+      row-gap: 2em;
+  }
+}

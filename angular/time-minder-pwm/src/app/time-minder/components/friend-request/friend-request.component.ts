@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-friend-request',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './friend-request.component.css'
 })
 export class FriendRequestComponent {
-
+  @Input() nombre: string = "Cristian Marrero López";
 }

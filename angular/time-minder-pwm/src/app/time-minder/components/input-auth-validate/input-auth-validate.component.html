@@ -1,0 +1,19 @@
+<div class="form_group" id="grupo__name">
+  <input
+  type={{type}}
+  id={{identificador}}
+  name={{identificador}}
+  class="form_line_input"
+  placeholder=" "
+  [(ngModel)]="model"
+  #modelRef="ngModel"
+  required
+  pattern={{pattern}}
+  (ngModelChange)="comparePattern(modelRef.value, pattern)"
+  >
+  <label [class.error]="modelRef.errors?.['pattern'] && modelRef.touched" for={{identificador}} class="form_label">{{contenido}}</label>
+  <span [class.error]="modelRef.errors?.['pattern'] && modelRef.touched" class="form_line_input"></span>
+  <p class="error-msg" *ngIf="modelRef.errors?.['pattern'] && modelRef.touched">
+    El valor introducido no es válido.
+  </p>
+</div>

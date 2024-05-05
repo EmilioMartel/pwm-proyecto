@@ -12,7 +12,6 @@ import {
   FriendRequestComponent,
   FriendUnconfirmedRequestComponent,
   ModalComponent,
-  PlanCardsComponent
 } from './components';
 import { TimeMinderComponent } from './time-minder/time-minder.component'
 import { TimeMinderRoutingModule } from './time-minder-routing.module';
@@ -24,6 +23,12 @@ import { BotonComponent } from './components/boton/boton.component';
 import { CardComponent } from './components/card/card.component';
 import { InputauthComponent } from './components/inputauth/inputauth.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FreePlanCardComponent } from './components/plan-cards/free-plan-card/free-plan-card.component';
+import { PremiumPlanCardComponent } from './components/plan-cards/premium-plan-card/premium-plan-card.component';
+import { InputAuthComponent } from './components/input-auth/input-auth.component';
+import { FormSignInComponent } from './components/form-sign-in/form-sign-in.component';
+import { BotonComponent } from './components/boton/boton.component';
+import { BotonAceptarComponent } from './components/boton-aceptar/boton-aceptar.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +44,18 @@ import { HttpClientModule } from '@angular/common/http';
     FriendRequestComponent,
     FriendUnconfirmedRequestComponent,
     ModalComponent,
-    PlanCardsComponent,
     TimeMinderComponent,
     InputComponent,
     CardComponent,
     BotonAceptarComponent,
     BotonComponent,
-    ChatScreenComponent
+    ChatScreenComponent,
+    FreePlanCardComponent,
+    PremiumPlanCardComponent,
+    InputAuthComponent,
+    FormSignInComponent,
+    BotonComponent,
+    BotonAceptarComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +67,12 @@ import { HttpClientModule } from '@angular/common/http';
     BotonAceptarComponent,
     BotonComponent,
     InputauthComponent,
-    CardComponent
+    CardComponent,
+    FormsModule,
+    FreePlanCardComponent,
+    PremiumPlanCardComponent,
+    FormSignInComponent,
+    BotonComponent
   ]
 })
 export class TimeMinderModule { }
